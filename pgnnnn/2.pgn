@@ -1,0 +1,28 @@
+[Event "Computer chess game"]
+[Site "DESKTOP-6AG63AU"]
+[Date "2020.12.06"]
+[Round "?"]
+[White "YUiUCI"]
+[Black "YUiUCI"]
+[Result "1/2-1/2"]
+[BlackElo "2000"]
+[ECO "A29"]
+[Opening "English"]
+[Time "18:29:03"]
+[Variation "Four Knights, 4.g3 d5 5.cxd5 Nxd5 6.Bg2 Nb6 7.O-O Be7 8.d3 O-O"]
+[WhiteElo "2000"]
+[TimeControl "0+5"]
+[Termination "normal"]
+[PlyCount "90"]
+[WhiteType "program"]
+[BlackType "program"]
+
+1. c4 e5 2. g3 Nf6 3. Bg2 d5 4. cxd5 Nxd5 5. Nc3 Nb6 6. Nf3 Nc6 7. O-O Be7
+8. d3 O-O 9. Be3 Be6 10. d4 exd4 11. Nxd4 Nxd4 12. Bxd4 c6 13. e3 Qd7 14.
+Qc2 Rfd8 15. Rfd1 Qe8 16. Ne4 Nd5 17. Nc5 Bxc5 18. Bxc5 b6 19. Ba3 Rac8 20.
+e4 Nc7 21. Rxd8 Rxd8 22. b3 Nb5 23. Bb2 c5 24. Rd1 Nd4 25. Bxd4 cxd4 26.
+Qc7 Rd7 27. Qf4 Qd8 28. Bf1 d3 29. Rd2 h5 30. Qe3 h4 31. Rxd3 Rxd3 32. Qxd3
+Qf6 33. Qd6 h3 34. Qb8+ Kh7 35. Qxa7 Qd4 36. Qa4 Qd1 37. Qb5 Bg4 38. Qd3
+Qe1 39. f3 Be6 40. Qe2 Qa1 41. Kf2 Qd4+ 42. Qe3 Qb2+ 43. Qe2 Qd4+ 44. Qe3
+Qb2+ 45. Qe2 Qd4+ {3-fold repetition} 1/2-1/2
+

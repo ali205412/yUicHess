@@ -1,0 +1,120 @@
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "0-1"]
+
+1. b4 e6 2. Nf3 Qg5 3. Na3 Qh4 4. d3 Nh6 5. g3 Qxb4+ 6. Qd2 Qxd2+ 7. Kxd2 f5 8. Bh3 Bb4+ 9. Kd1 Bc3 10. Bg4 Bb4 11. Bh3 Nf7 12. Nc4 g6 13. e4 Nc6 14. Bh6 b5 15. Bg7 Be7 16. Bxh8 bxc4 17. Ke2 Nxh8 18. Rac1 Kf7 19. Nd2 Nd4+ 20. Kf1 g5 21. Rd1 Ke8 22. dxc4 Ba6 23. Nb3 Nc6 24. exf5 Bb4 25. fxe6 dxe6 26. Bxe6 Ng6 27. h3 Nb8 28. Bd5 c6 29. a3 Kf8 30. Rd3 Be7 31. a4 cxd5 32. Rf3+ Kg7 33. Rh2 Kg8 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "0-1"]
+
+1. d4 c5 2. c3 a6 3. c4 Nf6 4. g4 cxd4 5. f4 g6 6. Qd3 a5 7. g5 d6 8. Kf2 Bg7 9. Kg3 Qb6 10. Kf3 Bg4+ 11. Kg2 Nbd7 12. Qe4 Qc6 13. Qxc6 bxc6 14. gxf6 Nxf6 15. e4 O-O-O 16. Kf2 Nxe4+ 17. Kg2 Kd7 18. Bd3 Bf5 19. b3 Nc5 20. Bxf5+ gxf5 21. Nf3 Nd3 22. Nxd4 Bxd4 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "1-0"]
+
+1. b3 Na6 2. b4 e5 3. c4 Bxb4 4. Na3 Nf6 5. Nc2 Bc5 6. e3 c6 7. g4 d5 8. e4 O-O 9. cxd5 h6 10. d3 Qc7 11. Rb1 Bxg4 12. Qe2 cxd5 13. f3 Ne8 14. h4 Bxf3 15. Nb4 dxe4 16. Nxf3 exf3 17. Qxf3 Nd6 18. Nxa6 bxa6 19. Bg2 Rac8 20. Bd2 Bd4 21. Kd1 Bc3 22. Qe2 Qc5 23. Qf3 Rc7 24. Qf4 Kh7 25. Qe3 Kg8 26. Qxc5 Rxc5 27. Rc1 Bxd2 28. Rxc5 Bb4 29. Rc7 Nf5 30. Rc6 e4 31. Bxe4 Nd4 32. Rc7 Nb5 33. Rd7 Nc3+ 34. Kc2 Nb5 35. Rh3 Rc8+ 36. Kb3 a5 37. Rf3 f6 38. Rf1 Bd2 39. h5 a4+ 40. Kxa4 Nc3+ 41. Ka3 Bg5 42. Rxa7 Nxe4 43. dxe4 Bc1+ 44. Ka4 Rc6 45. Rd1 Rc4+ 46. Kb3 Rc6 47. a4 Bg5 48. a5 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "0-1"]
+
+1. b3 e6 2. c3 Be7 3. e4 a5 4. Ne2 h6 5. d3 Kf8 6. Nd2 g5 7. Bb2 b5 8. g3 h5 9. Ng1 a4 10. Ke2 axb3 11. Qc1 Ra5 12. e5 bxa2 13. Qb1 Ra4 14. Qxa2 Nh6 15. Bg2 Ra6 16. Qb3 Nf5 17. Qxb5 Rxa1 18. Bxa1 Na6 19. Be4 Nh6 20. Bb2 d5 21. Bg2 g4 22. c4 Nc5 23. h3 h4 24. hxg4 dxc4 25. Qxc4 Ba6 26. Rxh4 Bxc4 27. Rxh6 Bxd3+ 28. Ke1 Rxh6 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "1-0"]
+
+1. d4 e5 2. Kd2 Qe7 3. a3 c6 4. c3 f6 5. e3 d6 6. a4 Qd8 7. Ne2 a5 8. b4 h5 9. Bb2 Bd7 10. Nf4 exf4 11. f3 Qc7 12. Ba3 Ra7 13. Rg1 c5 14. Bb5 Rh6 15. exf4 Qb6 16. bxa5 Rg6 17. axb6 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "0-1"]
+
+1. h4 c5 2. e4 a5 3. d4 a4 4. Nc3 f6 5. Qf3 Na6 6. dxc5 Nc7 7. Bc4 e6 8. Be3 Ra5 9. b4 Rxc5 10. bxc5 a3 11. Rd1 h5 12. Bb3 Nh6 13. c6 bxc6 14. Qxh5+ Nf7 15. Qxf7+ Kxf7 16. Bd2 c5 17. h5 Ke8 18. g4 Ba6 19. Rb1 c4 20. Ba4 g5 21. Bc1 Na8 22. Kd1 Bc5 23. Bb5 Bxb5 24. Nxb5 Ke7 25. Nh3 Qa5 26. Bd2 Qa6 27. Bc1 Qc6 28. Rf1 Qb6 29. Nxa3 Qa6 30. Nb5 Nb6 31. Be3 Bxe3 32. f3 c3 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "1-0"]
+
+1. b4 Nc6 2. b5 Nd4 3. Bb2 e6 4. c3 h6 5. cxd4 b6 6. Qc2 Bb7 7. d3 a6 8. Nf3 axb5 9. e4 Be7 10. Be2 d5 11. h3 Ra3 12. O-O Ra4 13. Qb3 dxe4 14. dxe4 Ra5 15. e5 Bd5 16. Nfd2 Bb4 17. Re1 Bxb3 18. Nxb3 Bxe1 19. a4 Rxa4 20. Rxa4 b4 21. d5 Qxd5 22. Bb5+ Qxb5 23. Ra8+ Kd7 24. Rd8+ Ke7 25. Bc3 c5 26. Rd6 g5 27. Rxb6 Bd2 28. Rxb5 Rh7 29. N1xd2 bxc3 30. Ne4 g4 31. Rb6 gxh3 32. f3 hxg2 33. Rc6 f6 34. Rc7+ Ke8 35. Rxh7 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "1-0"]
+
+1. c4 Na6 2. h3 d6 3. h4 f5 4. Nh3 b6 5. Qc2 Qd7 6. Rh2 e6 7. Rh1 Rb8 8. a4 c6 9. Ng5 Qc7 10. b3 h6 11. Ra3 e5 12. Nh3 g5 13. h5 Qd8 14. Qxf5 c5 15. Qg6+ Ke7 16. e4 Nb4 17. d3 a6 18. Ra1 Nc2+ 19. Kd1 Nxa1 20. Rh2 Nxb3 21. Nxg5 Bg4+ 22. f3 Nd2 23. Qf7# 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "1-0"]
+
+1. e4 d6 2. Nc3 a5 3. d4 e6 4. Nce2 Nf6 5. f4 b6 6. Kd2 Qd7 7. Ke3 Ra6 8. c4 Ng8 9. Nc3 Bb7 10. Bd3 c5 11. a3 d5 12. cxd5 exd5 13. Nf3 Qe6 14. Qf1 Be7 15. f5 Ba8 16. Bc2 Qe5 17. dxe5 d4+ 18. Kd2 dxc3+ 19. bxc3 Ra7 20. Qd3 Rc7 21. Bb1 c4 22. Qd4 Bc5 23. Ke3 Bxd4+ 24. Nxd4 Bc6 25. Re1 Nd7 26. g4 Ne7 27. Bc2 Nxe5 28. g5 h6 29. g6 Nc8 30. Rg1 Nd6 31. Kf4 Nc8 32. Kxe5 f6+ 33. Kf4 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "0-1"]
+
+1. c4 e5 2. Qb3 Nf6 3. g4 g6 4. Qh3 c6 5. d3 Qc7 6. Kd1 g5 7. Qg3 Ng8 8. Bf4 gxf4 9. Qf3 Bd6 10. h4 h6 11. Nc3 Bb4 12. h5 Ke7 13. Na4 Kd6 14. d4 f5 15. Rc1 Na6 16. Nh3 e4 17. a3 b6 18. Qxf4+ Ke7 19. Qd2 Bxd2 20. gxf5 Qb7 21. Kxd2 Nc5 22. f6+ Nxf6 23. Kc2 Na6 24. Nc3 Ke8 25. Kb1 Ke7 26. Ka1 Nxh5 27. Nxe4 d6 28. Nhg5 Nc7 29. Nc3 Nf4 30. Nf3 Bg4 31. Ne5 Bf3 32. Nxf3 Nfe6 33. d5 Ng5 34. Nxg5 Nxd5 35. Bg2 Rhg8 36. Rh2 hxg5 37. Nxd5+ Kf7 38. Nc3 Rae8 39. Rh7+ Rg7 40. Rxg7+ Kxg7 41. Bxc6 Qxc6 42. Nb5 a6 43. Nd4 Qe4 44. Rc3 Re6 45. Nxe6+ Qxe6 46. e3 Kh8 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "0-1"]
+
+1. g4 Nh6 2. a3 e5 3. b3 Nxg4 4. Bg2 Bb4 5. Be4 Qh4 6. Nh3 Ba5 7. O-O Qxh3 8. Bg2 Qxh2# 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2020.12.04"]
+[Round "?"]
+[White "current_model"]
+[Black "current_model"]
+[Result "1-0"]
+
+1. c4 e5 2. Qa4 f5 3. Qc6 bxc6 4. b3 Ke7 5. Nc3 h5 6. d4 exd4 7. e4 a5 8. f3 fxe4 9. h4 Rh6 10. Bg5+ Rf6 11. Rh3 Ra7 12. b4 axb4 13. Nxe4 b3 14. Rc1 Ke8 15. Bxf6 b2 16. Be5 Qf6 17. Bxf6 Nxf6 18. Rb1 Rb7 19. Be2 Kd8 20. c5 Nd5 21. Bc4 Ne3 22. Bd3 d5 23. Ng3 Ke7 24. Nxh5 Bf5 25. Bxf5 Nxf5 26. g3 Nd6 27. Nf6 Nc4 28. Nh7 Kd8 29. Nxf8 d3 30. Ne6+ Ke7 31. Nf4 Ke8 32. a3 Nd7 33. Nxd3 Rb3 34. Ke2 Nxa3 35. Rxb2 Rxb2+ 36. Nxb2 1-0
+

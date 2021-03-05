@@ -1,0 +1,53 @@
+-----------------------------Rating.dat:-----------------------------
+
+12/6/2020 6:26:50 PM :
+
+    Program                          Elo    +   -   Games   Score   Av.Op.  Draws
+
+  1 Lc0                            : 2700    0   0     1   100.0 %   2100    0.0 %
+  2 YUiUCI                         : 2100    0   0     1     0.0 %   2700    0.0 %
+
+
+----------------------------Programs.dat:----------------------------
+Individual statistics:
+
+1 Lc0                       : 2700    1 (+  1,=  0,-  0), 100.0 %
+
+YUiUCI                        :   1 (+  1,=  0,-  0), 100.0 %
+
+2 YUiUCI                    : 2100    1 (+  0,=  0,-  1),  0.0 %
+
+Lc0                           :   1 (+  0,=  0,-  1),  0.0 %
+
+
+----------------------------General.dat:-----------------------------
+
+Games        :      2 (finished)
+
+White Wins   :      0 ( 0.0 %)
+Black Wins   :      1 (50.0 %)
+Draws        :      1 (50.0 %)
+Unfinished   :      0
+
+White Perf.  : 25.0 %
+Black Perf.  : 75.0 %
+
+ECO A =      2 Games (100.0 %)
+ECO B =      0 Games ( 0.0 %)
+ECO C =      0 Games ( 0.0 %)
+ECO D =      0 Games ( 0.0 %)
+ECO E =      0 Games ( 0.0 %)
+
+
+----------------------------Cluster.dat:-----------------------------
+Cluster No. 1:
+
+YUiUCI                         (1)
+Lc0                            (1)
+
+2 programs, 1 games
+
+itoffset = 0.000000
+
+
+

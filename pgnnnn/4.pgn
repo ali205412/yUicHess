@@ -1,0 +1,29 @@
+[Event "Computer chess game"]
+[Site "DESKTOP-6AG63AU"]
+[Date "2021.02.11"]
+[Round "?"]
+[White "Hermann 2.8 64 bit"]
+[Black "YUiUCI"]
+[Result "1-0"]
+[BlackElo "2000"]
+[ECO "B12"]
+[Opening "Caro-Kann"]
+[Time "16:30:39"]
+[Variation "2.d4"]
+[WhiteElo "2000"]
+[TimeControl "600+6"]
+[Termination "normal"]
+[PlyCount "17"]
+[WhiteType "program"]
+[BlackType "program"]
+
+1. d4 c6 2. e4 f5 3. exf5 {(e4xf5 Qd8-a5+ c2-c3 Qa5xf5 Bf1-d3 Qf5-a5 Ng1-f3
+d7-d5 O-O g7-g6 Nb1-d2 Nb8-d7 Nd2-b3 Qa5-c7 Qd1-e2 Bf8-g7 Bc1-g5) +0.37/15
+18} Kf7 4. Qh5+ {(Qd1-h5+ g7-g6 f5xg6+ Kf7-g7 g6xh7 Rh8xh7 Qh5-g5+ Kg7-h8
+Bf1-d3 Rh7-h6 Ng1-f3 d7-d6 Nf3-h4 Rh6-e6+ Bc1-e3 Bf8-h6 Qg5-g3 Qd8-a5+
+Ke1-f1) +1.96/14 21} Kf6 5. Bg5+ {(Bc1-g5+ Kf6xf5 Qh5-f7+ Ng8-f6 Bg5-d2
+Qd8-e8 Bf1-d3+ Kf5-g4 f2-f3+ Kg4-h4 g2-g3+) +M6/11 8} Kxf5 6. Qf7+
+{(Qh5-f7+ Ng8-f6 Bg5-d2 Qd8-e8 Bf1-d3+ Kf5-g4 f2-f3+ Kg4-h4 g2-g3+) +M5/11
+0} Kg4 7. Be2+ {(Bf1-e2+ Kg4xg5 Ng1-h3+ Kg5-h6) +M3/7 0} Kxg5 8. Nh3+
+{(Ng1-h3+ Kg5-h6) +M2/5 0} Kh4 9. Qh5# {(Qf7-h5+) +M1/3 0} 1-0
+
