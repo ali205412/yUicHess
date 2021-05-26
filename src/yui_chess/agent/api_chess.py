@@ -1,8 +1,4 @@
-"""
-Defines the process which will listen on the pipe for
-an observation of the game state and return a prediction from the policy and
-value network.
-"""
+
 from multiprocessing import connection, Pipe
 from threading import Thread
 import tensorflow as tf
@@ -13,54 +9,32 @@ from yui_chess.config import Config
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
                          tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8)
-# device_count = {'GPU': 1}
 )
 config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
 tf.compat.v1.keras.backend.set_session(session)
 
 class ChessModelAPI:
-    """
-    Defines the process which will listen on the pipe for
-    an observation of the game state and return the predictions from the policy and
-    value networks.
-    Attributes:
-        :ivar ChessModel agent_model: ChessModel to use to make predictions.
-        :ivar list(Connection): list of pipe connections to listen for states on and return predictions on.
-    """
-    # noinspection PyUnusedLocal
+   
     def __init__(self, agent_model):  # ChessModel
-        """
-
-        :param ChessModel agent_model: trained model to use to make predictions
-        """
+       
         self.agent_model = agent_model
         self.pipes = []
 
     def start(self):
-        """
-        Starts a thread to listen on the pipe and make predictions
-        :return:
-        """
+        
         prediction_worker = Thread(target=self._predict_batch_worker, name="prediction_worker")
         prediction_worker.daemon = True
         prediction_worker.start()
 
     def create_pipe(self):
-        """
-        Creates a new two-way pipe and returns the connection to one end of it (the other will be used
-        by this class)
-        :return Connection: the other end of this pipe.
-        """
+       
         me, you = Pipe()
         self.pipes.append(me)
         return you
 
     def _predict_batch_worker(self):
-        """
-        Thread worker which listens on each pipe in self.pipes for an observation, and then outputs
-        the predictions for the policy and value networks when the observations come in. Repeats.
-        """
+        
         global graph
         graph = tf.get_default_graph()
 

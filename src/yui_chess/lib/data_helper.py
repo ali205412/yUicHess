@@ -1,6 +1,3 @@
-"""
-Various helper functions for working with the data used in this app
-"""
 
 import os
 import json

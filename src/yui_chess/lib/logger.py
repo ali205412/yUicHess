@@ -1,6 +1,3 @@
-"""
-Logging helper methods
-"""
 
 from logging import StreamHandler, basicConfig, DEBUG, getLogger, Formatter
 

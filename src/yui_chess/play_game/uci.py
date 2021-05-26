@@ -1,6 +1,3 @@
-"""
-Utility methods for playing an actual game as a human against a model.
-"""
 
 import sys
 from logging import getLogger
@@ -13,12 +10,10 @@ logger = getLogger(__name__)
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
                          tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8)
-# device_count = {'GPU': 1}
 )
 config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
 tf.compat.v1.keras.backend.set_session(session)
-# noinspection SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection
 def start(config: Config):
 
     PlayWithHumanConfig().update_play_config(config.play)
@@ -44,7 +39,7 @@ def start(config: Config):
             if words[0] == "startpos":
                 env.reset()
             else:
-                if words[0] == "fen": # skip extraneous word
+                if words[0] == "fen": 
                     words = words[1].split(' ',1)
                 fen = words[0]
                 for _ in range(5):

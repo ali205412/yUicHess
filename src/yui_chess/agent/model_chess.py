@@ -1,6 +1,4 @@
-"""
-Defines the actual model for making policy and value predictions given an observation.
-"""
+
 
 import ftplib
 import hashlib
@@ -20,13 +18,11 @@ from tensorflow.keras import backend as K
 from yui_chess.agent.api_chess import ChessModelAPI
 from yui_chess.config import Config
 
-# noinspection PyPep8Naming
 logger = getLogger(__name__)
 
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
                          tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8)
-# device_count = {'GPU': 1}
 )
 config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
@@ -34,16 +30,7 @@ tf.compat.v1.keras.backend.set_session(session)
 
 
 class ChessModel:
-    """
-    The model which can be trained to take observations of a game of chess and return value and policy
-    predictions.
-
-    Attributes:
-        :ivar Config config: configuration to use
-        :ivar Model model: the Keras model to use for predictions
-        :ivar digest: basically just a hash of the file containing the weights being used by this model
-        :ivar ChessModelAPI api: the api to use to listen for and then return this models predictions (on a pipe).
-    """
+   
     def __init__(self, config: Config):
         self.config = config
         self.model = None  # type: Model
@@ -51,26 +38,17 @@ class ChessModel:
         self.api = None
 
     def get_pipes(self, num = 1):
-        """
-        Creates a list of pipes on which observations of the game state will be listened for. Whenever
-        an observation comes in, returns policy and value network predictions on that pipe.
-
-        :param int num: number of pipes to create
-        :return str(Connection): a list of all connections to the pipes that were created
-        """
+       
         if self.api is None:
             self.api = ChessModelAPI(self)
             self.api.start()
         return [self.api.create_pipe() for _ in range(num)]
 
     def build(self):
-        """
-        Builds the full Keras model and stores it in self.model.
-        """
+        
         mc = self.config.model
         in_x = x = Input((18, 8, 8))
 
-        # (batch, channels, height, width)
         x = Conv2D(filters=mc.cnn_filter_num, kernel_size=mc.cnn_first_filter_size, padding="same",
                    data_format="channels_first", use_bias=False, kernel_regularizer=l2(mc.l2_reg),
                    name="input_conv-"+str(mc.cnn_first_filter_size)+"-"+str(mc.cnn_filter_num))(x)
@@ -82,16 +60,13 @@ class ChessModel:
 
         res_out = x
         
-        # for policy output
         x = Conv2D(filters=2, kernel_size=1, data_format="channels_first", use_bias=False, kernel_regularizer=l2(mc.l2_reg),
                     name="policy_conv-1-2")(res_out)
         x = BatchNormalization(axis=1, name="policy_batchnorm")(x)
         x = Activation("relu", name="policy_relu")(x)
         x = Flatten(name="policy_flatten")(x)
-        # no output for 'pass'
         policy_out = Dense(self.config.n_labels, kernel_regularizer=l2(mc.l2_reg), activation="softmax", name="policy_out")(x)
 
-        # for value output
         x = Conv2D(filters=4, kernel_size=1, data_format="channels_first", use_bias=False, kernel_regularizer=l2(mc.l2_reg),
                     name="value_conv-1-4")(res_out)
         x = BatchNormalization(axis=1, name="value_batchnorm")(x)
@@ -128,12 +103,7 @@ class ChessModel:
             return m.hexdigest()
 
     def load(self, config_path, weight_path):
-        """
-        
-        :param str config_path: path to the file containing the entire configuration
-        :param str weight_path: path to the file containing the model weights
-        :return: true iff successful in loading
-        """
+       
 
         mc = self.config.model
         resources = self.config.resource
@@ -163,11 +133,7 @@ class ChessModel:
             return False
 
     def save(self, config_path, weight_path):
-        """
-
-        :param str config_path: path to save the entire configuration to
-        :param str weight_path: path to save the model weights to
-        """
+        
         logger.debug(f"save model to {config_path}")
         with open(config_path, "wt") as f:
             json.dump(self.model.get_config(), f)
@@ -177,20 +143,4 @@ class ChessModel:
 
         mc = self.config.model
         resources = self.config.resource
-        if mc.distributed and config_path == resources.model_best_config_path:
-            try:
-                logger.debug("saving model to server")
-                ftp_connection = ftplib.FTP(resources.model_best_distributed_ftp_server,
-                                            resources.model_best_distributed_ftp_user,
-                                            resources.model_best_distributed_ftp_password)
-                ftp_connection.cwd(resources.model_best_distributed_ftp_remote_path)
-                fh = open(config_path, 'rb')
-                ftp_connection.storbinary('STOR model_best_config.json', fh)
-                fh.close()
-
-                fh = open(weight_path, 'rb')
-                ftp_connection.storbinary('STOR model_best_weight.h5', fh)
-                fh.close()
-                ftp_connection.quit()
-            except:
-                pass
+        

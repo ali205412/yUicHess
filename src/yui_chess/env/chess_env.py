@@ -1,7 +1,4 @@
-"""
-Encapsulates the functionality for representing
-and operating on the chess environment.
-"""
+
 import enum
 import chess.pgn
 import numpy as np
@@ -11,42 +8,26 @@ from logging import getLogger
 
 logger = getLogger(__name__)
 
-# noinspection PyArgumentList
 Winner = enum.Enum("Winner", "black white draw")
 
-# input planes
-# noinspection SpellCheckingInspection
-pieces_order = 'KQRBNPkqrbnp' # 12x8x8
-castling_order = 'KQkq'       # 4x8x8
-# fifty-move-rule             # 1x8x8
-# en en_passant               # 1x8x8
+pieces_order = 'KQRBNPkqrbnp' 
+castling_order = 'KQkq'       
+
 
 ind = {pieces_order[i]: i for i in range(12)}
 
 
 class ChessEnv:
-    """
-    Represents a chess environment where a chess game is played/
 
-    Attributes:
-        :ivar chess.Board board: current board state
-        :ivar int num_halfmoves: number of half moves performed in total by each player
-        :ivar Winner winner: winner of the game
-        :ivar boolean resigned: whether non-winner resigned
-        :ivar str result: str encoding of the result, 1-0, 0-1, or 1/2-1/2
-    """
     def __init__(self):
         self.board = None
         self.num_halfmoves = 0
-        self.winner = None  # type: Winner
+        self.winner = None  
         self.resigned = False
         self.result = None
 
     def reset(self):
-        """
-        Resets to begin a new game
-        :return ChessEnv: self
-        """
+
         self.board = chess.Board()
         self.num_halfmoves = 0
         self.winner = None
@@ -54,11 +35,7 @@ class ChessEnv:
         return self
 
     def update(self, board):
-        """
-        Like reset, but resets the position to whatever was supplied for board
-        :param chess.Board board: position to reset to
-        :return ChessEnv: self
-        """
+ 
         self.board = chess.Board(board)
         self.winner = None
         self.resigned = False
@@ -77,13 +54,7 @@ class ChessEnv:
         return self.board.turn == chess.WHITE
 
     def step(self, action: str, check_over = True):
-        """
 
-        Takes an action and updates the game state
-
-        :param str action: action to take in uci notation
-        :param boolean check_over: whether to check if game is over
-        """
         if check_over and action is None:
             self._resign()
             return
@@ -107,7 +78,7 @@ class ChessEnv:
 
     def _resign(self):
         self.resigned = True
-        if self.white_to_move: # WHITE RESIGNED!
+        if self.white_to_move: 
             self.winner = Winner.black
             self.result = "0-1"
         else:
@@ -158,10 +129,7 @@ class ChessEnv:
         return replace_tags_board(self.board.fen())
 
     def canonical_input_planes(self):
-        """
-
-        :return: a representation of the board using an (18, 8, 8) shape, good as input to a policy / value network
-        """
+ 
         return canon_input_planes(self.board.fen())
 
     def testeval(self, absolute=False) -> float:
@@ -169,7 +137,7 @@ class ChessEnv:
 
 
 def testeval(fen, absolute = False) -> float:
-    piece_vals = {'K': 3, 'Q': 14, 'R': 5, 'B': 3.25, 'N': 3, 'P': 1} # somehow it doesn't know how to keep its queen
+    piece_vals = {'K': 3, 'Q': 14, 'R': 5, 'B': 3.25, 'N': 3, 'P': 1}
     ans = 0.0
     tot = 0
     for c in fen.split(' ')[0]:
@@ -186,7 +154,7 @@ def testeval(fen, absolute = False) -> float:
     if not absolute and is_black_turn(fen):
         v = -v
     assert abs(v) < 1
-    return np.tanh(v * 3) # arbitrary
+    return np.tanh(v * 3) 
 
 
 def check_current_planes(realfen, planes):
@@ -224,16 +192,11 @@ def check_current_planes(realfen, planes):
     assert realparts[2] == castlingstring
     assert realparts[3] == epstr
     assert int(realparts[4]) == fiftymove
-    # realparts[5] is the fifty-move clock, discard that
     return "".join(fakefen) == replace_tags_board(realfen)
 
 
 def canon_input_planes(fen):
-    """
 
-    :param fen:
-    :return : (18, 8, 8) representation of the game state
-    """
     fen = maybe_flip_fen(fen, is_black_turn(fen))
     return all_input_planes(fen)
 
@@ -288,29 +251,11 @@ def aux_planes(fen):
     assert ret.shape == (6, 8, 8)
     return ret
 
-# FEN board is like this:
-# a8 b8 .. h8
-# a7 b7 .. h7
-# .. .. .. ..
-# a1 b1 .. h1
-# 
-# FEN string is like this:
-#  0  1 ..  7
-#  8  9 .. 15
-# .. .. .. ..
-# 56 57 .. 63
-
-# my planes are like this:
-# 00 01 .. 07
-# 10 11 .. 17
-# .. .. .. ..
-# 70 71 .. 77
-#
 
 
 def alg_to_coord(alg):
-    rank = 8 - int(alg[1])        # 0-7
-    file = ord(alg[0]) - ord('a') # 0-7
+    rank = 8 - int(alg[1])        
+    file = ord(alg[0]) - ord('a') 
     return rank, file
 
 

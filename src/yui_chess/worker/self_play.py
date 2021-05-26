@@ -1,6 +1,4 @@
-"""
-Holds the worker which trains the chess model using self play data.
-"""
+
 import os
 from collections import deque
 from concurrent.futures import ProcessPoolExecutor
@@ -25,21 +23,8 @@ def start(config: Config):
     return SelfPlayWorker(config).start()
 
 
-# noinspection PyAttributeOutsideInit
 class SelfPlayWorker:
-    """
-    Worker which trains a chess model using self play data. ALl it does is do self play and then write the
-    game data to file, to be trained on by the optimize worker.
-
-    Attributes:
-        :ivar Config config: config to use to configure this worker
-        :ivar ChessModel current_model: model to use for self play
-        :ivar Manager m: the manager to use to coordinate between other workers
-        :ivar list(Connection) cur_pipes: pipes to send observations to and get back mode predictions.
-        :ivar list((str,list(float))): list of all the moves. Each tuple has the observation in FEN format and
-            then the list of prior probabilities for each action, given by the visit count of each of the states
-            reached by the action (actions indexed according to how they are ordered in the uci move list).
-    """
+   
     def __init__(self, config: Config):
         self.config = config
         self.current_model = self.load_model()
@@ -48,9 +33,7 @@ class SelfPlayWorker:
         self.buffer = []
 
     def start(self):
-        """
-        Do self play and write the data to the appropriate file.
-        """
+        
         self.buffer = []
 
         futures = deque()
@@ -71,16 +54,13 @@ class SelfPlayWorker:
                 if (game_idx % self.config.play_data.nb_game_in_file) == 0:
                     self.flush_buffer()
                     reload_best_model_weight_if_changed(self.current_model)
-                futures.append(executor.submit(self_play_buffer, self.config, cur=self.cur_pipes)) # Keep it going
+                futures.append(executor.submit(self_play_buffer, self.config, cur=self.cur_pipes)) 
 
         if len(data) > 0:
             self.flush_buffer()
 
     def load_model(self):
-        """
-        Load the current best model
-        :return ChessModel: current best model
-        """
+       
         model = ChessModel(self.config)
         if self.config.opts.new or not load_best_model_weight(model):
             model.build()
@@ -88,9 +68,7 @@ class SelfPlayWorker:
         return model
 
     def flush_buffer(self):
-        """
-        Flush the play data buffer and write the data to the appropriate location
-        """
+       
         rc = self.config.resource
         game_id = datetime.now().strftime("%Y%m%d-%H%M%S.%f")
         path = os.path.join(rc.play_data_dir, rc.play_data_filename_tmpl % game_id)
@@ -100,9 +78,7 @@ class SelfPlayWorker:
         self.buffer = []
 
     def remove_play_data(self):
-        """
-        Delete the play data from disk
-        """
+        
         files = get_game_data_filenames(self.config.resource)
         if len(files) < self.config.play_data.max_file_num:
             return
@@ -111,15 +87,8 @@ class SelfPlayWorker:
 
 
 def self_play_buffer(config, cur) -> (ChessEnv, list):
-    """
-    Play one game and add the play data to the buffer
-    :param Config config: config for how to play
-    :param list(Connection) cur: list of pipes to use to get a pipe to send observations to for getting
-        predictions. One will be removed from this list during the game, then added back
-    :return (ChessEnv,list((str,list(float)): a tuple containing the final ChessEnv state and then a list
-        of data to be appended to the SelfPlayWorker.buffer
-    """
-    pipes = cur.pop() # borrow
+   
+    pipes = cur.pop() 
     env = ChessEnv().reset()
 
     white = ChessPlayer(config, pipes=pipes)

@@ -1,6 +1,3 @@
-"""
-Main entry point for running from command line.
-"""
 
 import os
 import sys

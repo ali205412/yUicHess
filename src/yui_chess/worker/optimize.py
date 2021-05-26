@@ -1,6 +1,4 @@
-"""
-Encapsulates the worker which trains ChessModels using game data from recorded games from a file.
-"""
+
 import os
 from collections import deque
 from concurrent.futures import ProcessPoolExecutor
@@ -23,50 +21,31 @@ logger = getLogger(__name__)
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
                          tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8)
-# device_count = {'GPU': 1}
 )
 config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
 tf.compat.v1.keras.backend.set_session(session)
 
 def start(config: Config):
-    """
-    Helper method which just kicks off the optimization using the specified config
-    :param Config config: config to use
-    """
+    
     return OptimizeWorker(config).start()
 
 
 class OptimizeWorker:
-    """
-    Worker which optimizes a ChessModel by training it on game data
-
-    Attributes:
-        :ivar Config config: config for this worker
-        :ivar ChessModel model: model to train
-        :ivar dequeue,dequeue,dequeue dataset: tuple of dequeues where each dequeue contains game states,
-            target policy network values (calculated based on visit stats
-                for each state during the game), and target value network values (calculated based on
-                    who actually won the game after that state)
-        :ivar ProcessPoolExecutor executor: executor for running all of the training processes
-    """
+   
     def __init__(self, config: Config):
         self.config = config
-        self.model = None  # type: ChessModel
+        self.model = None  
         self.dataset = deque(),deque(),deque()
         self.executor = ProcessPoolExecutor(max_workers=config.trainer.cleaning_processes)
 
     def start(self):
-        """
-        Load the next generation model from disk and start doing the training endlessly.
-        """
+        
         self.model = self.load_model()
         self.training()
 
     def training(self):
-        """
-        Does the actual training of the model, running it on game data. Endless.
-        """
+        
         self.compile_model()
         self.filenames = deque(get_game_data_filenames(self.config.resource))
         shuffle(self.filenames)
@@ -84,11 +63,7 @@ class OptimizeWorker:
                 c.popleft()
 
     def train_epoch(self, epochs):
-        """
-        Runs some number of epochs of training
-        :param int epochs: number of epochs
-        :return: number of datapoints that were trained on in total
-        """
+        
         tc = self.config.trainer
         state_ary, policy_ary, value_ary = self.collect_all_loaded_data()
         tensorboard_cb = TensorBoard(log_dir="./logs", batch_size=tc.batch_size, histogram_freq=1)
@@ -102,17 +77,13 @@ class OptimizeWorker:
         return steps
 
     def compile_model(self):
-        """
-        Compiles the model to use optimizer and loss function tuned for supervised learning
-        """
+        
         opt = Adam()
         losses = ['categorical_crossentropy', 'mean_squared_error'] # avoid overfit for supervised 
         self.model.model.compile(optimizer=opt, loss=losses, loss_weights=self.config.trainer.loss_weights)
 
     def save_current_model(self):
-        """
-        Saves the current model as the next generation model to the appropriate directory
-        """
+       
         rc = self.config.resource
         model_id = datetime.now().strftime("%Y%m%d-%H%M%S.%f")
         model_dir = os.path.join(rc.next_generation_model_dir, rc.next_generation_model_dirname_tmpl % model_id)
@@ -122,9 +93,7 @@ class OptimizeWorker:
         self.model.save(config_path, weight_path)
 
     def fill_queue(self):
-        """
-        Fills the self.dataset queues with data from the training dataset.
-        """
+        
         futures = deque()
         with ProcessPoolExecutor(max_workers=self.config.trainer.cleaning_processes) as executor:
             for _ in range(self.config.trainer.cleaning_processes):
@@ -142,11 +111,7 @@ class OptimizeWorker:
                     futures.append(executor.submit(load_data_from_file,filename))
 
     def collect_all_loaded_data(self):
-        """
-
-        :return: a tuple containing the data in self.dataset, split into
-        (state, policy, and value).
-        """
+        
         state_ary,policy_ary,value_ary=self.dataset
 
         state_ary1 = np.asarray(state_ary, dtype=np.float32)
@@ -155,10 +120,7 @@ class OptimizeWorker:
         return state_ary1, policy_ary1, value_ary1
 
     def load_model(self):
-        """
-        Loads the next generation model from the appropriate directory. If not found, loads
-        the best known model.
-        """
+        
         model = ChessModel(self.config)
         rc = self.config.resource
 
@@ -182,10 +144,7 @@ def load_data_from_file(filename):
 
 
 def convert_to_cheating_data(data):
-    """
-    :param data: format is SelfPlayWorker.buffer
-    :return:
-    """
+    
     state_list = []
     policy_list = []
     value_list = []
@@ -197,7 +156,7 @@ def convert_to_cheating_data(data):
             policy = Config.flip_policy(policy)
 
         move_number = int(state_fen.split(' ')[5])
-        value_certainty = min(5, move_number)/5 # reduces the noise of the opening... plz train faster
+        value_certainty = min(5, move_number)/5
         sl_value = value*value_certainty + testeval(state_fen, False)*(1-value_certainty)
 
         state_list.append(state_planes)
