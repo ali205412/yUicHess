@@ -49,11 +49,6 @@ class ResourceConfig:
         self.model_best_config_path = os.path.join(self.model_dir, "model_best_config.json")
         self.model_best_weight_path = os.path.join(self.model_dir, "model_best_weight.h5")
 
-        self.model_best_distributed_ftp_server = "yuichess.mygamesonline.org"
-        self.model_best_distributed_ftp_user = "3740283_yuichess"
-        self.model_best_distributed_ftp_password = "MCM{?!;81B{L8kP2"
-        self.model_best_distributed_ftp_remote_path = "/yuichess.mygamesonline.org/"
-
         self.next_generation_model_dir = os.path.join(self.model_dir, "next_generation")
         self.next_generation_model_dirname_tmpl = "model_%s"
         self.next_generation_model_config_filename = "model_config.json"
@@ -159,8 +154,7 @@ class Config:
             import yui_chess.configs.mini as c
         elif config_type == "normal":
             import yui_chess.configs.normal as c
-        elif config_type == "distributed":
-            import yui_chess.configs.distributed as c
+
         else:
             raise RuntimeError(f"unknown config_type: {config_type}")
         self.model = c.ModelConfig()
