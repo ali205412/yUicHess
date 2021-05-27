@@ -33,7 +33,7 @@ class ChessModel:
    
     def __init__(self, config: Config):
         self.config = config
-        self.model = None  # type: Model
+        self.model = None  
         self.digest = None
         self.api = None
 
