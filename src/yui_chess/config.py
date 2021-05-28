@@ -107,14 +107,12 @@ class Config:
     flipped_labels = flipped_uci_labels()
     unflipped_index = None
 
-    def __init__(self, config_type="mini"):
+    def __init__(self, config_type="normal"):
 
         self.opts = Options()
         self.resource = ResourceConfig()
 
-        if config_type == "mini":
-            import yui_chess.configs.mini as c
-        elif config_type == "normal":
+        if config_type == "normal":
             import yui_chess.configs.normal as c
 
         else:
