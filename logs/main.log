@@ -1,3 +1,9 @@
 2021-05-28 14:05:55,918@yui_chess.manager INFO # config type: normal
 2021-05-28 14:06:02,788@yui_chess.manager INFO # config type: normal
 2021-05-28 14:08:14,380@yui_chess.manager INFO # config type: normal
+2021-05-28 14:10:36,624@yui_chess.manager INFO # config type: normal
+2021-05-28 14:10:40,658@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-05-28 14:10:54,740@yui_chess.manager INFO # config type: normal
+2021-05-28 14:10:57,372@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+

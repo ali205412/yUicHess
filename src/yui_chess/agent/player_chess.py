@@ -46,7 +46,7 @@ class ChessPlayer:
         self.pipe_pool = pipes
         self.node_lock = defaultdict(Lock)
 
-    def 
+    def reset(self):
         self.tree = defaultdict(VisitStats)
 
     def deboog(self, env):
