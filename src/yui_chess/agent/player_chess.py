@@ -14,14 +14,14 @@ logger = getLogger(__name__)
 
 
 class VisitStats:
-   
+
     def __init__(self):
         self.a = defaultdict(ActionStats)
         self.sum_n = 0
 
 
 class ActionStats:
-   
+
     def __init__(self):
         self.n = 0
         self.w = 0
@@ -30,7 +30,7 @@ class ActionStats:
 
 
 class ChessPlayer:
-   
+
     def __init__(self, config: Config, pipes=None, play_config=None, dummy=False):
         self.moves = []
 
@@ -47,6 +47,7 @@ class ChessPlayer:
         self.node_lock = defaultdict(Lock)
 
     def reset(self):
+
         self.tree = defaultdict(VisitStats)
 
     def deboog(self, env):
@@ -69,7 +70,7 @@ class ChessPlayer:
                   f'p: {s[3]:7.5f}')
 
     def action(self, env, can_stop = True) -> str:
-        
+
         self.reset()
 
         root_value, naked_value = self.search_moves(env)
@@ -79,14 +80,13 @@ class ChessPlayer:
         if can_stop and self.play_config.resign_threshold is not None and \
                         root_value <= self.play_config.resign_threshold \
                         and env.num_halfmoves > self.play_config.min_resign_turn:
-            # noinspection PyTypeChecker
             return None
         else:
             self.moves.append([env.observation, list(policy)])
             return self.config.labels[my_action]
 
     def search_moves(self, env) -> (float, float):
-        
+
         futures = []
         with ThreadPoolExecutor(max_workers=self.play_config.search_threads) as executor:
             for _ in range(self.play_config.simulation_num_per_move):
@@ -95,53 +95,13 @@ class ChessPlayer:
         vals = [f.result() for f in futures]
 
         return np.max(vals), vals[0] 
-    
-    def search_my_move_explicit(self, env, is_root_node=False):
-        if env.done:
-            if env.winner == Winner.draw:
-                return 0,[]
-            return -1,[]
 
-        state = state_key(env)
+    def search_my_move(self, env: ChessEnv, is_root_node=False) -> float:
 
-        with self.node_lock[state]:
-            if state not in self.tree:
-                leaf_p, leaf_v = self.expand_and_evaluate(env)
-                self.tree[state].p = leaf_p
-                return leaf_v, [] 
-
-            action_t = self.select_action_q_and_u(env, is_root_node)
-
-            virtual_loss = self.play_config.virtual_loss
-
-            my_visit_stats = self.tree[state]
-            my_stats = my_visit_stats.a[action_t]
-
-            my_visit_stats.sum_n += virtual_loss
-            my_stats.n += virtual_loss
-            my_stats.w += -virtual_loss
-            my_stats.q = my_stats.w / my_stats.n
-
-        move = action_t.uci()
-        env.step(move)
-        next_state = state_key(env)
-        leaf_v, next_sequence = self.search_my_move_explicit(env) 
-        leaf_v = -leaf_v
-
-    
-        with self.node_lock[state]:
-            my_visit_stats.sum_n += -virtual_loss + 1
-            my_stats.n += -virtual_loss + 1
-            my_stats.w += virtual_loss + leaf_v
-            my_stats.q = my_stats.w / my_stats.n
-
-        return leaf_v, [next_state] + next_sequence
-
-    def search_my_move(self, env: ChessEnv, is_root_node=False, depth=0) -> float:
-       
         if env.done:
             if env.winner == Winner.draw:
                 return 0
+           
             return -1
 
         state = state_key(env)
@@ -150,7 +110,8 @@ class ChessPlayer:
             if state not in self.tree:
                 leaf_p, leaf_v = self.expand_and_evaluate(env)
                 self.tree[state].p = leaf_p
-                return leaf_v 
+                return leaf_v
+
             action_t = self.select_action_q_and_u(env, is_root_node)
 
             virtual_loss = self.play_config.virtual_loss
@@ -163,9 +124,8 @@ class ChessPlayer:
             my_stats.w += -virtual_loss
             my_stats.q = my_stats.w / my_stats.n
 
-        print("SMM state", 'd{}'.format(depth), state, action_t)
         env.step(action_t.uci())
-        leaf_v = self.search_my_move(env, depth=depth+1)  # next move from enemy POV
+        leaf_v = self.search_my_move(env) 
         leaf_v = -leaf_v
 
 
@@ -178,7 +138,7 @@ class ChessPlayer:
         return leaf_v
 
     def expand_and_evaluate(self, env) -> (np.ndarray, float):
-       
+
         state_planes = env.canonical_input_planes()
 
         leaf_p, leaf_v = self.predict(state_planes)
@@ -189,20 +149,20 @@ class ChessPlayer:
         return leaf_p, leaf_v
 
     def predict(self, state_planes):
-       
-        pipes = self.pipe_pool.pop()
-        pipes[0].send(state_planes)
-        ret = pipes[0].recv()
-        self.pipe_pool.append(pipes)
+
+        pipe = self.pipe_pool.pop()
+        pipe.send(state_planes)
+        ret = pipe.recv()
+        self.pipe_pool.append(pipe)
         return ret
 
     def select_action_q_and_u(self, env, is_root_node) -> chess.Move:
-       
+
         state = state_key(env)
 
         my_visitstats = self.tree[state]
 
-        if my_visitstats.p is not None: #push p to edges
+        if my_visitstats.p is not None:
             tot_p = 1e-8
             for mov in env.board.legal_moves:
                 mov_p = my_visitstats.p[self.move_lookup[mov]]
@@ -212,7 +172,7 @@ class ChessPlayer:
                 a_s.p /= tot_p
             my_visitstats.p = None
 
-        xx_ = np.sqrt(my_visitstats.sum_n + 1)  
+        xx_ = np.sqrt(my_visitstats.sum_n + 1) 
 
         e = self.play_config.noise_eps
         c_puct = self.play_config.c_puct
@@ -237,7 +197,7 @@ class ChessPlayer:
         return best_a
 
     def apply_temperature(self, policy, turn):
-       
+
         tau = np.power(self.play_config.tau_decay_rate, turn + 1)
         if tau < 0.1:
             tau = 0
@@ -252,7 +212,7 @@ class ChessPlayer:
             return ret
 
     def calc_policy(self, env):
-        
+
         state = state_key(env)
         my_visitstats = self.tree[state]
         policy = np.zeros(self.labels_n)
@@ -263,7 +223,7 @@ class ChessPlayer:
         return policy
 
     def sl_action(self, observation, my_action, weight=1):
-       
+
         policy = np.zeros(self.labels_n)
 
         k = self.move_lookup[chess.Move.from_uci(my_action)]
@@ -273,12 +233,12 @@ class ChessPlayer:
         return my_action
 
     def finish_game(self, z):
-       
+
         for move in self.moves:  
             move += [z]
 
 
 def state_key(env: ChessEnv) -> str:
-   
-    fen = env.board.fen().rsplit(' ', 1)
+
+    fen = env.board.fen().rsplit(' ', 1) 
     return fen[0]
