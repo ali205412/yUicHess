@@ -1,5 +1,4 @@
 
-
 import ftplib
 import hashlib
 import json
@@ -13,39 +12,31 @@ from keras.layers.core import Activation, Dense, Flatten
 from keras.layers.merge import Add
 from keras.layers.normalization import BatchNormalization
 from keras.regularizers import l2
-from tensorflow.keras import backend as K
 
-from yui_chess.agent.api_chess import ChessModelAPI
-from yui_chess.config import Config
+from chess_zero.agent.api_chess import ChessModelAPI
+from chess_zero.config import Config
+
 
 logger = getLogger(__name__)
 
-import tensorflow as tf
-config = tf.compat.v1.ConfigProto(gpu_options = 
-                         tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8)
-)
-config.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=config)
-tf.compat.v1.keras.backend.set_session(session)
-
 
 class ChessModel:
-   
+    
     def __init__(self, config: Config):
         self.config = config
-        self.model = None  
+        self.model = None  # type: Model
         self.digest = None
         self.api = None
 
     def get_pipes(self, num = 1):
-       
+
         if self.api is None:
             self.api = ChessModelAPI(self)
             self.api.start()
         return [self.api.create_pipe() for _ in range(num)]
 
     def build(self):
-        
+ 
         mc = self.config.model
         in_x = x = Input((18, 8, 8))
 
@@ -104,7 +95,6 @@ class ChessModel:
 
     def load(self, config_path, weight_path):
        
-
         mc = self.config.model
         resources = self.config.resource
         if os.path.exists(config_path) and os.path.exists(weight_path):

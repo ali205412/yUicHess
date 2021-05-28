@@ -9,10 +9,10 @@ from time import time
 
 import chess.pgn
 
-from yui_chess.agent.player_chess import ChessPlayer
-from yui_chess.config import Config
-from yui_chess.env.chess_env import ChessEnv, Winner
-from yui_chess.lib.data_helper import write_game_data_to_file, find_pgn_files
+from chess_zero.agent.player_chess import ChessPlayer
+from chess_zero.config import Config
+from chess_zero.env.chess_env import ChessEnv, Winner
+from chess_zero.lib.data_helper import write_game_data_to_file, find_pgn_files
 
 logger = getLogger(__name__)
 
@@ -24,21 +24,22 @@ def start(config: Config):
 
 
 class SupervisedLearningWorker:
-   
+
     def __init__(self, config: Config):
-        
+        """
+        :param config:
+        """
         self.config = config
         self.buffer = []
 
     def start(self):
-       
+
         self.buffer = []
-       
         self.idx = 0
         start_time = time()
         with ProcessPoolExecutor(max_workers=7) as executor:
             games = self.get_games_from_all_files()
-            for res in as_completed([executor.submit(get_buffer, self.config, game) for game in games]):
+            for res in as_completed([executor.submit(get_buffer, self.config, game) for game in games]): #poisoned reference (memleak)
                 self.idx += 1
                 env, data = res.result()
                 self.save_data(data)
@@ -53,7 +54,7 @@ class SupervisedLearningWorker:
             self.flush_buffer()
 
     def get_games_from_all_files(self):
-       
+
         files = find_pgn_files(self.config.resource.play_data_dir)
         print(files)
         games = []
@@ -63,13 +64,13 @@ class SupervisedLearningWorker:
         return games
 
     def save_data(self, data):
-        
+
         self.buffer += data
         if self.idx % self.config.play_data.sl_nb_game_in_file == 0:
             self.flush_buffer()
 
     def flush_buffer(self):
-        
+
         rc = self.config.resource
         game_id = datetime.now().strftime("%Y%m%d-%H%M%S.%f")
         path = os.path.join(rc.play_data_dir, rc.play_data_filename_tmpl % game_id)
@@ -80,7 +81,7 @@ class SupervisedLearningWorker:
 
 
 def get_games_from_file(filename):
-    
+
     pgn = open(filename, errors='ignore')
     offsets = []
     while True:
@@ -107,7 +108,7 @@ def clip_elo_policy(config, elo):
 
 
 def get_buffer(config, game) -> (ChessEnv, list):
-   
+
     env = ChessEnv().reset()
     white = ChessPlayer(config, dummy=True)
     black = ChessPlayer(config, dummy=True)
@@ -123,9 +124,9 @@ def get_buffer(config, game) -> (ChessEnv, list):
     k = 0
     while not env.done and k < len(actions):
         if env.white_to_move:
-            action = white.sl_action(env.observation, actions[k], weight=white_weight)
+            action = white.sl_action(env.observation, actions[k], weight=white_weight) #ignore=True
         else:
-            action = black.sl_action(env.observation, actions[k], weight=black_weight)
+            action = black.sl_action(env.observation, actions[k], weight=black_weight) #ignore=True
         env.step(action, False)
         k += 1
 
