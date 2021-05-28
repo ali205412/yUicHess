@@ -7,8 +7,8 @@ from threading import Lock
 import chess
 import numpy as np
 
-from chess_zero.config import Config
-from chess_zero.env.chess_env import ChessEnv, Winner
+from yui_chess.config import Config
+from yui_chess.env.chess_env import ChessEnv, Winner
 
 logger = getLogger(__name__)
 

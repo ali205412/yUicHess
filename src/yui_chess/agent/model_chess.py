@@ -13,8 +13,8 @@ from keras.layers.merge import Add
 from keras.layers.normalization import BatchNormalization
 from keras.regularizers import l2
 
-from chess_zero.agent.api_chess import ChessModelAPI
-from chess_zero.config import Config
+from yui_chess.agent.api_chess import ChessModelAPI
+from yui_chess.config import Config
 
 
 logger = getLogger(__name__)

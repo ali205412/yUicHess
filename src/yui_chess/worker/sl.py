@@ -9,10 +9,10 @@ from time import time
 
 import chess.pgn
 
-from chess_zero.agent.player_chess import ChessPlayer
-from chess_zero.config import Config
-from chess_zero.env.chess_env import ChessEnv, Winner
-from chess_zero.lib.data_helper import write_game_data_to_file, find_pgn_files
+from yui_chess.agent.player_chess import ChessPlayer
+from yui_chess.config import Config
+from yui_chess.env.chess_env import ChessEnv, Winner
+from yui_chess.lib.data_helper import write_game_data_to_file, find_pgn_files
 
 logger = getLogger(__name__)
 
