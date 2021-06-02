@@ -4,7 +4,7 @@ from threading import Thread
 import tensorflow as tf
 import numpy as np
 from keras import backend as K
-
+#ha noob -from ali and rayyan
 from yui_chess.config import Config
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
