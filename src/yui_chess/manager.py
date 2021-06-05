@@ -14,10 +14,10 @@ CMD_LIST = ['self', 'opt', 'eval', 'sl', 'uci']
 def create_parser():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cmd", help="what to do", choices=CMD_LIST)
-    parser.add_argument("--new", help="run from new best model", action="store_true")
-    parser.add_argument("--type", help="use normal setting", default="normal")
-    parser.add_argument("--total-step", help="set TrainerConfig.start_total_steps", type=int)
+    parser.add_argument("--cmd", help="What can be done?", choices=CMD_LIST)
+    parser.add_argument("--new", help="Start training from a fresh plate", action="store_true")
+    parser.add_argument("--type", help="Use standard config", default="normal")
+    parser.add_argument("--total-step", help="change TrainerConfig.start_total_steps value", type=int)
     return parser
 
 
