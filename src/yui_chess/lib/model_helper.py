@@ -25,10 +25,10 @@ def reload_best_model_weight_if_changed(model):
     if model.config.model.distributed:
         return load_best_model_weight(model)
     else:
-        logger.debug("start reload the best model if changed")
+        logger.debug("begin to refeed the aightest model if tampered with")
         digest = model.fetch_digest(model.config.resource.model_best_weight_path)
         if digest != model.digest:
             return load_best_model_weight(model)
 
-        logger.debug("the best model is not changed")
+        logger.debug("aighest model stil aightest model")
         return False

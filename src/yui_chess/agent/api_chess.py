@@ -16,7 +16,7 @@ tf.compat.v1.keras.backend.set_session(session)
 
 class ChessModelAPI:
    
-    def __init__(self, agent_model):  # ChessModel
+    def __init__(self, agent_model):  
        
         self.agent_model = agent_model
         self.pipes = []

@@ -39,10 +39,10 @@ class EvaluateWorker:
 
         while True:
             ng_model, model_dir = self.load_next_generation_model()
-            logger.debug(f"start evaluate model {model_dir}")
+            logger.debug(f"beginning evaluation process of le {model_dir}")
             ng_is_great = self.evaluate_model(ng_model)
             if ng_is_great:
-                logger.debug(f"New Model become best model: {model_dir}")
+                logger.debug(f"new model become aightest model: {model_dir}")
                 save_as_best_model(ng_model)
                 self.current_model = ng_model
             self.move_model(model_dir)
@@ -104,7 +104,7 @@ class EvaluateWorker:
             dirs = get_next_generation_model_dirs(self.config.resource)
             if dirs:
                 break
-            logger.info("There is no next generation model to evaluate")
+            logger.info("nthn to evaluate")
             sleep(60)
         model_dir = dirs[-1] if self.config.eval.evaluate_latest_first else dirs[0]
         config_path = os.path.join(model_dir, rc.next_generation_model_config_filename)

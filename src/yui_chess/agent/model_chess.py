@@ -66,7 +66,7 @@ class ChessModel:
         x = Dense(mc.value_fc_size, kernel_regularizer=l2(mc.l2_reg), activation="relu", name="value_dense")(x)
         value_out = Dense(1, kernel_regularizer=l2(mc.l2_reg), activation="tanh", name="value_out")(x)
 
-        self.model = Model(in_x, [policy_out, value_out], name="chess_model")
+        self.model = Model(in_x, [policy_out, value_out], name="3lis_model")
 
     def _build_residual_block(self, x, index):
         mc = self.config.model
@@ -104,20 +104,20 @@ class ChessModel:
             self.model.load_weights(weight_path)
             self.model._make_predict_function()
             self.digest = self.fetch_digest(weight_path)
-            logger.debug(f"loaded model digest = {self.digest}")
+            logger.debug(f"loaded model from le = {self.digest}")
             return True
         else:
-            logger.debug(f"model files does not exist at {config_path} and {weight_path}")
+            logger.debug(f"cant find nthn @ {config_path} and {weight_path}")
             return False
 
     def save(self, config_path, weight_path):
         
-        logger.debug(f"save model to {config_path}")
+        logger.debug(f"dump model in {config_path}")
         with open(config_path, "wt") as f:
             json.dump(self.model.get_config(), f)
             self.model.save_weights(weight_path)
         self.digest = self.fetch_digest(weight_path)
-        logger.debug(f"saved model digest {self.digest}")
+        logger.debug(f"ate up the saved model {self.digest}")
 
         mc = self.config.model
         resources = self.config.resource

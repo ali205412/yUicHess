@@ -128,10 +128,10 @@ class OptimizeWorker:
         if not dirs:
             logger.debug("loading best model")
             if not load_best_model_weight(model):
-                raise RuntimeError("Best model can not loaded!")
+                raise RuntimeError("cant load nthn")
         else:
             latest_dir = dirs[-1]
-            logger.debug("loading latest model")
+            logger.debug("loading newsest model")
             config_path = os.path.join(latest_dir, rc.next_generation_model_config_filename)
             weight_path = os.path.join(latest_dir, rc.next_generation_model_weight_filename)
             model.load(config_path, weight_path)
