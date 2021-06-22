@@ -15,7 +15,7 @@ A Reinforcement Learning Chess Engine ;)
 
 1. install Anaconda3 python3.8
 2. install my anaconda env
-3. install [Cuda 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base)
+3. install [Cuda 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base) to utilize GPU accelerated training
 4. adjust the .bat files replacing ali20 with your systems's name for example `C:\Users\[system_name]\anaconda3\Scripts\`
 
 -**Use**	
