@@ -8,8 +8,8 @@ A Reinforcement Learning Chess Engine ;)
 
 -**GUI module**	
 
-	-the gui module allows the engine to communicate with gameboards throught the UCI protocol (Universal Chess Interface)
-	-to allow the engine to communicate with a chess interface all that is needed is to point it to yUiUCI.bat
+-the gui module allows the engine to communicate with gameboards throught the UCI protocol (Universal Chess Interface)
+-to allow the engine to communicate with a chess interface all that is needed is to point it to yUiUCI.bat
 
 -**Setup**	
 
@@ -20,8 +20,8 @@ A Reinforcement Learning Chess Engine ;)
 
 -**Use**	
 
-	In order to train the model run self, opt and eval.
-	settings used in normal config file in order to further tailor the training process to the equipment you are using
+In order to train the model run self, opt and eval.
+settings used in normal config file in order to further tailor the training process to the equipment you are using
 
 -**Recommended Equipment**	
 
