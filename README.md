@@ -30,3 +30,7 @@ I generated self play games for 200 hours,  ran the opt function for all generat
 All was done on a K80 gpu using GCP (Google Cloud Platform).
 
 Any CPU could be used but I recommend at least a 4 core CPU with a minimum clockspeed of 4 Ghz, and the system memory should at least be 32 GB's to avoid any bottlenecks.
+
+-[**Resesearch on Background and Related works, and related technologies**](https://docs.google.com/document/d/14dOU6QFc-1rZ_3eqg3ifCOgDc-JjadE_rQyrVHZNdMU/edit?usp=sharing)
+
+-[**Project process log and engine breakdown and analysis**](https://docs.google.com/presentation/d/11OXL5jcayGdL1V-T7D2m4rcXQ_JtFJcp3NWrGJXBp6A/edit?usp=sharing)
