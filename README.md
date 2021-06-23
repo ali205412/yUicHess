@@ -25,5 +25,6 @@ settings used in normal config file in order to further tailor the training proc
 
 -**Recommended Equipment**	
 
-I generated self play games for 200 hours, and ran the opt function for all the game data, and then ran the eval function to evaluate best model all was done on a K80 gpu using GCP (Google Cloud Platform).
-Any cpu could be used but I recommend at least a 4 core cpu with a minimum clockspeed of 4 Ghz, and the system memory should at least be 32 GB's to avoid any bottlenecks.
+I generated self play games for 200 hours,  ran the opt function for all generated play data, and then used the eval function to evaluate models generated in order to find best model. 
+All was done on a K80 gpu using GCP (Google Cloud Platform).
+Any CPU could be used but I recommend at least a 4 core CPU with a minimum clockspeed of 4 Ghz, and the system memory should at least be 32 GB's to avoid any bottlenecks.
