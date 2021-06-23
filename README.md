@@ -35,4 +35,4 @@ Any CPU could be used but I recommend at least a 4 core CPU with a minimum clock
 
 -[**Project process log and engine breakdown and analysis**](https://docs.google.com/presentation/d/11OXL5jcayGdL1V-T7D2m4rcXQ_JtFJcp3NWrGJXBp6A/edit?usp=sharing)
 
--[**Project Gant Chart**](https://docs.google.com/spreadsheets/d/1DUmkcPceNDXtFXZ1pDVqOrEvx1-5kkgY-qdOPaMNvuQ/edit#gid=2043958752)
+-[**Project Gant Chart**](https://docs.google.com/spreadsheets/d/1DUmkcPceNDXtFXZ1pDVqOrEvx1-5kkgY-qdOPaMNvuQ/edit?usp=sharing)
