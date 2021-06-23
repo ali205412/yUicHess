@@ -19,8 +19,7 @@ A Reinforcement Learning Chess Engine ;)
 	4. adjust the .bat files replacing `ali20` with your systems's name for example `C:\Users\[system_name]\anaconda3\Scripts\`
 
 - **Use**	
-
- - In order to train the model run self, opt and eval.
+ 	- In order to train the model run self, opt and eval.
 settings used in normal config file in order to further tailor the training process to the equipment you are using
 
 - **Recommended Equipment**	
