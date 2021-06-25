@@ -38,5 +38,5 @@ settings used in normal config file in order to further tailor the training proc
 
 
 - **Resources used**
-- [Sugairs Alpha Zero Implementation](https://web.stanford.edu/~surag/posts/alphazero.html)
-- [Deepminds Alpha Zero config](https://kstatic.googleusercontent.com/files/2f51b2a749a284c2e2dfa13911da965f4855092a179469aedd15fbe4efe8f8cbf9c515ef83ac03a6515fa990e6f85fd827dcd477845e806f23a17845072dc7bd) played a huge role as inspiration for the intial settings used.
+	- [Sugairs Alpha Zero Implementation](https://web.stanford.edu/~surag/posts/alphazero.html)
+	- [Deepminds Alpha Zero config](https://kstatic.googleusercontent.com/files/2f51b2a749a284c2e2dfa13911da965f4855092a179469aedd15fbe4efe8f8cbf9c515ef83ac03a6515fa990e6f85fd827dcd477845e806f23a17845072dc7bd) played a huge role as inspiration for the intial settings used.
