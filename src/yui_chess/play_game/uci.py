@@ -63,9 +63,9 @@ def start(config: Config):
 
 
 def get_player(config):
-    from yui_chess.agent.model_chess import ChessModel
+    from yui_chess.agent.model_chess import EngineModel
     from yui_chess.lib.model_helper import load_best_model_weight
-    model = ChessModel(config)
+    model = EngineModel(config)
     if not load_best_model_weight(model):
         raise RuntimeError("Best model not found!")
     return ChessPlayer(config, model.get_pipes(config.play.search_threads))

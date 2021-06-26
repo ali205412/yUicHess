@@ -17,7 +17,7 @@ class EvaluateConfig:
 class PlayDataConfig:
     def __init__(self):
         self.min_elo_policy = 500
-        self.max_elo_policy = 1800 
+        self.max_elo_policy = 20000 
         self.sl_nb_game_in_file = 250
         self.nb_game_in_file = 50
         self.max_file_num = 150
