@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 from glob import glob
 from logging import getLogger
-
+#import
 import chess
 import pyperclip
 from yui_chess.config import ResourceConfig
