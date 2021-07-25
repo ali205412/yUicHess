@@ -1,4 +1,3 @@
-
 import os
 from collections import deque
 from concurrent.futures import ProcessPoolExecutor
@@ -7,7 +6,6 @@ from logging import getLogger
 from multiprocessing import Manager
 from threading import Thread
 from time import time
-
 from yui_chess.agent.model_chess import EngineModel
 from yui_chess.agent.player_chess import ChessPlayer
 from yui_chess.config import Config
@@ -18,13 +16,11 @@ from yui_chess.lib.model_helper import load_best_model_weight, save_as_best_mode
 
 logger = getLogger(__name__)
 
-
 def start(config: Config):
     return SelfPlayWorker(config).start()
 
 
 class SelfPlayWorker:
-   
     def __init__(self, config: Config):
         self.config = config
         self.current_model = self.load_model()
@@ -33,9 +29,7 @@ class SelfPlayWorker:
         self.buffer = []
 
     def start(self):
-        
         self.buffer = []
-
         futures = deque()
         with ProcessPoolExecutor(max_workers=self.config.play.max_processes) as executor:
             for game_idx in range(self.config.play.max_processes * 2):
@@ -48,19 +42,16 @@ class SelfPlayWorker:
                 print(f"game {game_idx:3} time={time() - start_time:5.1f}s "
                     f"halfmoves={env.num_halfmoves:3} {env.winner:12} "
                     f"{'by resign ' if env.resigned else '          '}")
-
                 pretty_print(env, ("current_model", "current_model"))
                 self.buffer += data
                 if (game_idx % self.config.play_data.nb_game_in_file) == 0:
                     self.flush_buffer()
                     reload_best_model_weight_if_changed(self.current_model)
                 futures.append(executor.submit(self_play_buffer, self.config, cur=self.cur_pipes)) 
-
         if len(data) > 0:
             self.flush_buffer()
 
     def load_model(self):
-       
         model = EngineModel(self.config)
         if self.config.opts.new or not load_best_model_weight(model):
             model.build()
@@ -68,7 +59,6 @@ class SelfPlayWorker:
         return model
 
     def flush_buffer(self):
-       
         rc = self.config.resource
         game_id = datetime.now().strftime("%Y%m%d-%H%M%S.%f")
         path = os.path.join(rc.play_data_dir, rc.play_data_filename_tmpl % game_id)
@@ -78,7 +68,6 @@ class SelfPlayWorker:
         self.buffer = []
 
     def remove_play_data(self):
-        
         files = get_game_data_filenames(self.config.resource)
         if len(files) < self.config.play_data.max_file_num:
             return
@@ -87,13 +76,10 @@ class SelfPlayWorker:
 
 
 def self_play_buffer(config, cur) -> (ChessEnv, list):
-   
     pipes = cur.pop() 
     env = ChessEnv().reset()
-
     white = ChessPlayer(config, pipes=pipes)
     black = ChessPlayer(config, pipes=pipes)
-
     while not env.done:
         if env.white_to_move:
             action = white.action(env)
@@ -102,22 +88,18 @@ def self_play_buffer(config, cur) -> (ChessEnv, list):
         env.step(action)
         if env.num_halfmoves >= config.play.max_game_length:
             env.adjudicate()
-
     if env.winner == Winner.white:
         black_win = -1
     elif env.winner == Winner.black:
         black_win = 1
     else:
         black_win = 0
-
     black.finish_game(black_win)
     white.finish_game(-black_win)
-
     data = []
     for i in range(len(white.moves)):
         data.append(white.moves[i])
         if i < len(black.moves):
             data.append(black.moves[i])
-
     cur.append(pipes)
     return env, data
