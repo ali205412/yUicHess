@@ -229,3 +229,20 @@ keep_dims is deprecated, use keepdims instead
 2021-07-25 20:19:59,193@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1205: calling reduce_prod_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
 Instructions for updating:
 keep_dims is deprecated, use keepdims instead
+2021-07-25 20:39:20,774@yui_chess.manager INFO # config type: normal
+2021-07-25 20:39:23,538@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-07-25 20:39:23,753@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-07-25 20:39:23,753@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210626-182113.203456\model_config.json
+2021-07-25 20:39:23,754@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:442: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-07-25 20:39:23,760@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:3543: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+2021-07-25 20:39:23,767@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1188: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-07-25 20:39:23,792@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:112: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2021-07-25 20:39:24,375@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1205: calling reduce_prod_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
