@@ -200,3 +200,15 @@ Call initializer instance with the dtype argument instead of passing it to the c
 
 2021-07-25 20:01:20,196@yui_chess.worker.optimize DEBUG # loading newsest model
 2021-07-25 20:01:20,197@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210626-182113.203456\model_config.json
+2021-07-25 20:04:43,402@yui_chess.manager INFO # config type: normal
+2021-07-25 20:04:43,888@tensorflow DEBUG # Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2021-07-25 20:04:46,106@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:13: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-07-25 20:04:46,312@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-07-25 20:04:46,312@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210626-182113.203456\model_config.json
+2021-07-25 20:06:36,090@yui_chess.manager INFO # config type: normal
+2021-07-25 20:06:36,660@tensorflow DEBUG # Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2021-07-25 20:06:38,880@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:13: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-07-25 20:06:39,083@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-07-25 20:06:39,084@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210626-182113.203456\model_config.json
