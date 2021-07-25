@@ -28,6 +28,7 @@ def start(config: Config):
 class EvaluateWorker:
 
     def __init__(self, config: Config):
+  
         self.config = config
         self.play_config = config.eval.play_config
         self.current_model = self.load_current_model()
@@ -35,6 +36,7 @@ class EvaluateWorker:
         self.cur_pipes = self.m.list([self.current_model.get_pipes(self.play_config.search_threads) for _ in range(self.play_config.max_processes)])
 
     def start(self):
+
         while True:
             ng_model, model_dir = self.load_next_generation_model()
             logger.debug(f"beginning evaluation process of le {model_dir}")
@@ -46,7 +48,9 @@ class EvaluateWorker:
             self.move_model(model_dir)
 
     def evaluate_model(self, ng_model):
+
         ng_pipes = self.m.list([ng_model.get_pipes(self.play_config.search_threads) for _ in range(self.play_config.max_processes)])
+
         futures = []
         with ProcessPoolExecutor(max_workers=self.play_config.max_processes) as executor:
             for game_idx in range(self.config.eval.game_num):
@@ -63,10 +67,12 @@ class EvaluateWorker:
                              f"{'by resign ' if env.resigned else '          '}"
                              f"win_rate={win_rate*100:5.1f}% "
                              f"{env.board.fen().split(' ')[0]}")
+
                 colors = ("current_model", "ng_model")
                 if not current_white:
                     colors = reversed(colors)
                 pretty_print(env, colors)
+
                 if len(results)-sum(results) >= self.config.eval.game_num * (1-self.config.eval.replace_rate):
                     logger.debug(f"lose count reach {results.count(0)} so give up challenge")
                     return False
@@ -79,16 +85,20 @@ class EvaluateWorker:
         return win_rate >= self.config.eval.replace_rate
 
     def move_model(self, model_dir):
+
         rc = self.config.resource
         new_dir = os.path.join(rc.next_generation_model_dir, "copies", model_dir.name)
         os.rename(model_dir, new_dir)
 
     def load_current_model(self):
+
         model = EngineModel(self.config)
         load_best_model_weight(model)
         return model
 
     def load_next_generation_model(self):
+
+
         rc = self.config.resource
         while True:
             dirs = get_next_generation_model_dirs(self.config.resource)
@@ -105,15 +115,18 @@ class EvaluateWorker:
 
 
 def play_game(config, cur, ng, current_white: bool) -> (float, ChessEnv, bool):
+
     cur_pipes = cur.pop()
     ng_pipes = ng.pop()
     env = ChessEnv().reset()
+
     current_player = ChessPlayer(config, pipes=cur_pipes, play_config=config.eval.play_config)
     ng_player = ChessPlayer(config, pipes=ng_pipes, play_config=config.eval.play_config)
     if current_white:
         white, black = current_player, ng_player
     else:
         white, black = ng_player, current_player
+
     while not env.done:
         if env.white_to_move:
             action = white.action(env)
@@ -122,6 +135,7 @@ def play_game(config, cur, ng, current_white: bool) -> (float, ChessEnv, bool):
         env.step(action)
         if env.num_halfmoves >= config.eval.max_game_length:
             env.adjudicate()
+
     if env.winner == Winner.draw:
         ng_score = 0.5
     elif env.white_won == current_white:
