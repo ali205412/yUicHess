@@ -6,15 +6,17 @@ from datetime import datetime
 from logging import getLogger
 from time import sleep
 from random import shuffle
+
 import numpy as np
-from yui_chess.agent.model_chess import EngineModel
+
+from yui_chess.agent.model_chess import ChessModel
 from yui_chess.config import Config
 from yui_chess.env.chess_env import canon_input_planes, is_black_turn, testeval
 from yui_chess.lib.data_helper import get_game_data_filenames, read_game_data_from_file, get_next_generation_model_dirs
 from yui_chess.lib.model_helper import load_best_model_weight
+
 from keras.optimizers import Adam
 from keras.callbacks import TensorBoard
-from keras_adabound import AdaBound
 logger = getLogger(__name__)
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
@@ -77,7 +79,7 @@ class OptimizeWorker:
     def compile_model(self):
         
         opt = Adam()
-        losses = ['categorical_crossentropy', 'mean_squared_error'] 
+        losses = ['categorical_crossentropy', 'mean_squared_error'] # avoid overfit for supervised 
         self.model.model.compile(optimizer=opt, loss=losses, loss_weights=self.config.trainer.loss_weights)
 
     def save_current_model(self):
@@ -119,7 +121,7 @@ class OptimizeWorker:
 
     def load_model(self):
         
-        model = EngineModel(self.config)
+        model = ChessModel(self.config)
         rc = self.config.resource
 
         dirs = get_next_generation_model_dirs(rc)

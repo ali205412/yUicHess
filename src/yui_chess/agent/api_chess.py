@@ -4,7 +4,7 @@ from threading import Thread
 import tensorflow as tf
 import numpy as np
 from keras import backend as K
-#heyo -from ali and rayyan
+#ha noob -from ali and rayyan
 from yui_chess.config import Config
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto(gpu_options = 
@@ -14,7 +14,7 @@ config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
 tf.compat.v1.keras.backend.set_session(session)
 
-class EngineInterface:
+class ChessModelAPI:
    
     def __init__(self, agent_model):  
        
@@ -26,6 +26,12 @@ class EngineInterface:
         prediction_worker = Thread(target=self._predict_batch_worker, name="prediction_worker")
         prediction_worker.daemon = True
         prediction_worker.start()
+
+    def create_pipe(self):
+       
+        me, you = Pipe()
+        self.pipes.append(me)
+        return you
 
     def _predict_batch_worker(self):
         
@@ -46,13 +52,5 @@ class EngineInterface:
             with graph.as_default():
                 policy_ary, value_ary = self.agent_model.model.predict_on_batch(data)
             for pipe, p, v in zip(result_pipes, policy_ary, value_ary):
-                pipe.send((p, float(v)))    
-
-    def create_pipe(self):
-       
-        me, you = Pipe()
-        self.pipes.append(me)
-        return you
-
-
+                pipe.send((p, float(v)))
 

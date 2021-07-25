@@ -13,14 +13,14 @@ from keras.layers.merge import Add
 from keras.layers.normalization import BatchNormalization
 from keras.regularizers import l2
 
-from yui_chess.agent.api_chess import EngineInterface
+from yui_chess.agent.api_chess import ChessModelAPI
 from yui_chess.config import Config
 
 
 logger = getLogger(__name__)
 
 
-class EngineModel:
+class ChessModel:
     
     def __init__(self, config: Config):
         self.config = config
@@ -31,7 +31,7 @@ class EngineModel:
     def get_pipes(self, num = 1):
 
         if self.api is None:
-            self.api = EngineInterface(self)
+            self.api = ChessModelAPI(self)
             self.api.start()
         return [self.api.create_pipe() for _ in range(num)]
 
