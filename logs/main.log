@@ -186,3 +186,17 @@ Call initializer instance with the dtype argument instead of passing it to the c
 2021-06-26 18:21:13,183@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\callbacks.py:791: The name tf.Summary is deprecated. Please use tf.compat.v1.Summary instead.
 
 2021-06-26 18:21:13,203@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210626-182113.203456\model_config.json
+2021-07-25 19:58:32,977@yui_chess.manager INFO # config type: normal
+2021-07-25 19:58:36,549@tensorflow DEBUG # Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2021-07-25 19:58:41,052@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:13: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-07-25 20:00:56,228@yui_chess.manager INFO # config type: normal
+2021-07-25 20:00:56,791@tensorflow DEBUG # Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2021-07-25 20:00:59,220@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:13: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-07-25 20:01:17,224@yui_chess.manager INFO # config type: normal
+2021-07-25 20:01:17,709@tensorflow DEBUG # Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2021-07-25 20:01:19,998@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:13: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-07-25 20:01:20,196@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-07-25 20:01:20,197@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210626-182113.203456\model_config.json
