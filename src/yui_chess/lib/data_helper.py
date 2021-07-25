@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 from glob import glob
 from logging import getLogger
-#import
+
 import chess
 import pyperclip
 from yui_chess.config import ResourceConfig
@@ -20,8 +20,7 @@ def pretty_print(env, colors):
     game.headers["Date"] = datetime.now().strftime("%Y.%m.%d")
     new_pgn.write(str(game) + "\n\n")
     new_pgn.close()
-    #pyperclip.copy(env.board.fen()) causes isues with linux based systems such as my env on GCP so 
-    #has to be commented out when using a non windows machine
+    pyperclip.copy(env.board.fen())
 
 
 def find_pgn_files(directory, pattern='*.pgn'):
