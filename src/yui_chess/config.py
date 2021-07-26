@@ -107,13 +107,13 @@ class Config:
     flipped_labels = flipped_uci_labels()
     unflipped_index = None
 
-    def __init__(self, config_type="normal"):
+    def __init__(self, config_type="options"):
 
         self.opts = Options()
         self.resource = ResourceConfig()
 
-        if config_type == "normal":
-            import yui_chess.configs.normal as c
+        if config_type == "options":
+            import yui_chess.configs.options as c
 
         else:
             raise RuntimeError(f"unknown config_type: {config_type}")

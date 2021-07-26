@@ -16,7 +16,7 @@ def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cmd", help="What can be done?", choices=options)
     parser.add_argument("--new", help="Start training from a fresh plate", action="store_true")
-    parser.add_argument("--type", help="Use standard config", default="config")
+    parser.add_argument("--type", help="Use standard config", default="options")
     parser.add_argument("--total-step", help="change TrainerConfig.start_total_steps value", type=int)
     return parser
 
