@@ -36,7 +36,7 @@ class modelInterface:
     def projectionCluster(self):
         # Monitors self.pipes and returns any policy or value network outputs
         global graph
-        graph = tf.get_default_graph()
+        graph = tf.compat.v1.get_default_graph()
 
         while True:
             ready = connection.wait(self.pipes,timeout=0.001)
