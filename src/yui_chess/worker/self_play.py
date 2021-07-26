@@ -8,7 +8,7 @@ from multiprocessing import Manager
 from threading import Thread
 from time import time
 
-from yui_chess.agent.model_chess import ChessModel
+from yui_chess.agent.model_chess import gameModel
 from yui_chess.agent.player_chess import ChessPlayer
 from yui_chess.config import Config
 from yui_chess.env.chess_env import ChessEnv, Winner
