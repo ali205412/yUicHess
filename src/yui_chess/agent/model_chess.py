@@ -31,7 +31,7 @@ class gameModel:
     def get_pipes(self, num = 1):
 # Generates the pipes to be observed 
         if self.api is None:
-            self.api = ChessModelAPI(self)
+            self.api = modelInterface(self)
             self.api.start()
         return [self.api.create_pipe() for _ in range(num)]
 

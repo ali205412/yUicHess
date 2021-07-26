@@ -61,7 +61,7 @@ class SelfPlayWorker:
 
     def load_model(self):
        
-        model = ChessModel(self.config)
+        model = gameModel(self.config)
         if self.config.opts.new or not load_best_model_weight(model):
             model.build()
             save_as_best_model(model)
