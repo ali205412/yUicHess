@@ -8,15 +8,15 @@ from .config import Config
 
 logger = getLogger(__name__)
 
-CMD_LIST = ['self', 'opt', 'eval', 'sl', 'uci']
+options = ['self', 'opt', 'eval', 'sl', 'uci']
 
 
 def create_parser():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cmd", help="What can be done?", choices=CMD_LIST)
+    parser.add_argument("--cmd", help="What can be done?", choices=options)
     parser.add_argument("--new", help="Start training from a fresh plate", action="store_true")
-    parser.add_argument("--type", help="Use standard config", default="normal")
+    parser.add_argument("--type", help="Use standard config", default="config")
     parser.add_argument("--total-step", help="change TrainerConfig.start_total_steps value", type=int)
     return parser
 
@@ -53,9 +53,6 @@ def start():
     elif args.cmd == 'eval':
         from .worker import evaluate
         return evaluate.start(config)
-    elif args.cmd == 'sl':
-        from .worker import sl
-        return sl.start(config)
     elif args.cmd == 'uci':
         from .play_game import uci
         return uci.start(config)
