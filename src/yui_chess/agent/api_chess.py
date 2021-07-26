@@ -1,4 +1,5 @@
-
+# Acts as a relay attaing the game state and returing the values outputted from
+# the policy and value networks
 from multiprocessing import connection, Pipe
 from threading import Thread
 import tensorflow as tf
@@ -13,27 +14,27 @@ config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
 tf.compat.v1.keras.backend.set_session(session)
 
-class ChessModelAPI:
+class modelInterface:
    
-    def __init__(self, agent_model):  
+    def __init__(self, computeModel):  
        
-        self.agent_model = agent_model
+        self.computeModel = computeModel
         self.pipes = []
 
     def start(self):
-        
-        prediction_worker = Thread(target=self._predict_batch_worker, name="prediction_worker")
-        prediction_worker.daemon = True
-        prediction_worker.start()
+        # Monitors and relays value on pipe to return predicted values
+        projectionOperator = Thread(target=self.projectionCluster, name="projectionOperator")
+        projectionOperator.daemon = True
+        projectionOperator.start()
 
     def create_pipe(self):
-       
-        me, you = Pipe()
-        self.pipes.append(me)
-        return you
+       # Multi-Direction pipe
+        moi, tu = Pipe()
+        self.pipes.append(moi)
+        return tu
 
-    def _predict_batch_worker(self):
-        
+    def projectionCluster(self):
+        # Monitors self.pipes and returns any policy or value network outputs
         global graph
         graph = tf.get_default_graph()
 
@@ -49,7 +50,7 @@ class ChessModelAPI:
 
             data = np.asarray(data, dtype=np.float32)
             with graph.as_default():
-                policy_ary, value_ary = self.agent_model.model.predict_on_batch(data)
+                policy_ary, value_ary = self.agent_model.model.projectCluster(data)
             for pipe, p, v in zip(result_pipes, policy_ary, value_ary):
                 pipe.send((p, float(v)))
 

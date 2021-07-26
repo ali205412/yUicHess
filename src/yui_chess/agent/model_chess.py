@@ -1,4 +1,4 @@
-
+# Model for the policy and value predictions
 import ftplib
 import hashlib
 import json
@@ -13,33 +13,32 @@ from keras.layers.merge import Add
 from keras.layers.normalization import BatchNormalization
 from keras.regularizers import l2
 
-from yui_chess.agent.api_chess import ChessModelAPI
+from yui_chess.agent.api_chess import modelInterface
 from yui_chess.config import Config
 
 
 logger = getLogger(__name__)
 
 
-class ChessModel:
+class gameModel:
     
     def __init__(self, config: Config):
-        self.config = config
-        self.model = None  
-        self.digest = None
-        self.api = None
+        self.config = config #configuration used
+        self.model = None  # keras model
+        self.digest = None #weights being adjusted
+        self.api = None # links back to api chess returning the policy and value outputs
 
     def get_pipes(self, num = 1):
-
+# Generates the pipes to be observed 
         if self.api is None:
             self.api = ChessModelAPI(self)
             self.api.start()
         return [self.api.create_pipe() for _ in range(num)]
 
     def build(self):
- 
+ # model being generated in keras, and stored in the self.model var
         mc = self.config.model
         in_x = x = Input((18, 8, 8))
-
         x = Conv2D(filters=mc.cnn_filter_num, kernel_size=mc.cnn_first_filter_size, padding="same",
                    data_format="channels_first", use_bias=False, kernel_regularizer=l2(mc.l2_reg),
                    name="input_conv-"+str(mc.cnn_first_filter_size)+"-"+str(mc.cnn_filter_num))(x)
