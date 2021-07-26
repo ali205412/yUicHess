@@ -489,3 +489,22 @@ Call initializer instance with the dtype argument instead of passing it to the c
 2021-07-25 21:01:38,922@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\callbacks.py:791: The name tf.Summary is deprecated. Please use tf.compat.v1.Summary instead.
 
 2021-07-25 21:01:38,940@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210138.940991\model_config.json
+2021-07-25 21:01:42,739@yui_chess.agent.model_chess DEBUG # ate up the saved model eb997e2c033cc36512ebb67d287d47ce97e8425fc5d4e18a4779db28588d6b18
+2021-07-25 21:01:59,895@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210159.894948\model_config.json
+2021-07-25 21:02:00,164@yui_chess.agent.model_chess DEBUG # ate up the saved model 3a3d03c6d98c2513e2f55839dc7b0ed5eba6a4eda4e2675d73b8a1545ba2bf94
+2021-07-25 21:02:19,573@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210219.572772\model_config.json
+2021-07-25 21:02:19,766@yui_chess.agent.model_chess DEBUG # ate up the saved model 106a8168f2a255bb5773c51e54cf1481141b5ae58beee7476f2f4b3ab0c94b8c
+2021-07-25 21:02:41,893@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210241.893409\model_config.json
+2021-07-25 21:02:42,062@yui_chess.agent.model_chess DEBUG # ate up the saved model 9110a35f925bde97e771f66ba740d587be19a6ebaaacbefa05b18d70003bc3f3
+2021-07-25 21:03:06,537@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210306.536249\model_config.json
+2021-07-25 21:03:06,730@yui_chess.agent.model_chess DEBUG # ate up the saved model a3fefdd6b2599cda0b6dfe798835476060797f57585f99456df7db934a90c028
+2021-07-25 21:03:32,920@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210332.920612\model_config.json
+2021-07-25 21:03:33,109@yui_chess.agent.model_chess DEBUG # ate up the saved model 60a96fbde0f26b4380055dbe3f553a78c3bead5f0c616c36a0551edc512de7fd
+2021-07-25 21:04:01,024@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210401.023643\model_config.json
+2021-07-25 21:04:01,251@yui_chess.agent.model_chess DEBUG # ate up the saved model 5b905c3a7ddc847c8d49c4aac7d751ca36d2a54bd196908968933a18b2b2eab5
+2021-07-25 21:04:32,970@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210432.970344\model_config.json
+2021-07-25 21:04:33,166@yui_chess.agent.model_chess DEBUG # ate up the saved model c4e5cb5c2cfa0d1f40d57749a4a20f9ca071dfa4d20a5582c42402a4b48a3daa
+2021-07-25 21:05:06,992@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210506.991313\model_config.json
+2021-07-25 21:05:07,166@yui_chess.agent.model_chess DEBUG # ate up the saved model 90d592a6befbb8d3360a1e9bce51faa89f0d8733f14a2825e1c1e93f4e9cb9b5
+2021-07-25 21:05:42,291@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210542.291242\model_config.json
+2021-07-25 21:05:42,460@yui_chess.agent.model_chess DEBUG # ate up the saved model aa714f9d35e14a4d81b6574d74b22f7af4dcf7431a79a069162fc17b2c657cc9
