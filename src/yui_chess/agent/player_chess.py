@@ -1,4 +1,4 @@
-
+# Includes element that realate to direct gameplay, in addition to returning prediction values
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from logging import getLogger
@@ -16,16 +16,23 @@ logger = getLogger(__name__)
 class VisitStats:
 
     def __init__(self):
+        #deafultdict represents all possible moves that could be done from the
+        #current board state
         self.a = defaultdict(ActionStats)
+        #tallys number of visits that have been done
         self.sum_n = 0
 
 
 class ActionStats:
 
     def __init__(self):
+        #n. of times potential moves is visited by the MCTS
         self.n = 0
+        #n. of times a subsect of the move is visited by the MCTS
         self.w = 0
+        #move rating (x bar) (total rating / by n.of visited)
         self.q = 0
+        #r value of attempting to engage in the move
         self.p = 0
 
 
@@ -33,22 +40,28 @@ class ChessPlayer:
 
     def __init__(self, config: Config, pipes=None, play_config=None, dummy=False):
         self.moves = []
-
+        #Keeps a record of all moves that have occured during the coourse of the game
         self.tree = defaultdict(VisitStats)
         self.config = config
+        #Temporarily stores the settings chosen from the options.py file in RAM
         self.play_config = play_config or self.config.play
         self.labels_n = config.n_labels
+        #Stores all potential move in label form e.x. h1g1
         self.labels = config.labels
+        #links the index with the labels
         self.move_lookup = {chess.Move.from_uci(move): i for move, i in zip(self.labels, range(self.labels_n))}
         if dummy:
             return
 
         self.pipe_pool = pipes
+        #pipe relays the current game state in order to be able to predict the policy and value outputs
         self.node_lock = defaultdict(Lock)
-
+        #Encountered error in multi threaded predicitons, thus created to log wether a game state is being explored by another thread
+        #All movements along the tree are stored
     def reset(self):
 
         self.tree = defaultdict(VisitStats)
+        #resets VisitStats in order to initiate a new journey
 
     def deboog(self, env):
         print(env.testeval())
@@ -70,13 +83,13 @@ class ChessPlayer:
                   f'p: {s[3]:7.5f}')
 
     def action(self, env, can_stop = True) -> str:
-
+        #Function serves to try and predict the best potential action that could be taken in order to maximize winning potential
         self.reset()
 
         root_value, naked_value = self.search_moves(env)
         policy = self.calc_policy(env)
         my_action = int(np.random.choice(range(self.labels_n), p = self.apply_temperature(policy, env.num_halfmoves)))
-
+        #Whether or not the chosen action is legal
         if can_stop and self.play_config.resign_threshold is not None and \
                         root_value <= self.play_config.resign_threshold \
                         and env.num_halfmoves > self.play_config.min_resign_turn:
@@ -86,7 +99,7 @@ class ChessPlayer:
             return self.config.labels[my_action]
 
     def search_moves(self, env) -> (float, float):
-
+        #Scouts all explored game states and returns the game state with the greatest rating/value.
         futures = []
         with ThreadPoolExecutor(max_workers=self.play_config.search_threads) as executor:
             for _ in range(self.play_config.simulation_num_per_move):
@@ -97,7 +110,7 @@ class ChessPlayer:
         return np.max(vals), vals[0] 
 
     def search_my_move(self, env: ChessEnv, is_root_node=False) -> float:
-
+        #Some possible moves are explored then interated into a list, when then filter through and chooses the best move the was found during the exploration.
         if env.done:
             if env.winner == Winner.draw:
                 return 0
@@ -138,7 +151,7 @@ class ChessPlayer:
         return leaf_v
 
     def expand_and_evaluate(self, env) -> (np.ndarray, float):
-
+        #A new leaf is expanded which gets a prediction for its policy and value output in the current game state.
         state_planes = env.canonical_input_planes()
 
         leaf_p, leaf_v = self.predict(state_planes)
@@ -149,15 +162,17 @@ class ChessPlayer:
         return leaf_p, leaf_v
 
     def predict(self, state_planes):
-
+        #Recieves a output for the policy and value
         pipe = self.pipe_pool.pop()
         pipe.send(state_planes)
+        #Observation state is represented in the form of a plane
         ret = pipe.recv()
         self.pipe_pool.append(pipe)
         return ret
+        #Returns the policy value hence the prior probability of taking the action leading to this state and value value (sounds confusing :|) which is the value of the state prediction for this specific state.
 
     def select_action_q_and_u(self, env, is_root_node) -> chess.Move:
-
+        #Chooses which tree branch should be explored through prioritizing high value pathways
         state = state_key(env)
 
         my_visitstats = self.tree[state]
@@ -197,7 +212,7 @@ class ChessPlayer:
         return best_a
 
     def apply_temperature(self, policy, turn):
-
+        # A random variation to the chance of picking a certain move 
         tau = np.power(self.play_config.tau_decay_rate, turn + 1)
         if tau < 0.1:
             tau = 0
@@ -212,7 +227,7 @@ class ChessPlayer:
             return ret
 
     def calc_policy(self, env):
-
+        # Returns probaility of choosing all potential moves through taking into account the number of times it is visited.
         state = state_key(env)
         my_visitstats = self.tree[state]
         policy = np.zeros(self.labels_n)
@@ -223,7 +238,7 @@ class ChessPlayer:
         return policy
 
     def sl_action(self, observation, my_action, weight=1):
-
+        #Logs all moves in self.moves, in order to generate game play data
         policy = np.zeros(self.labels_n)
 
         k = self.move_lookup[chess.Move.from_uci(my_action)]
@@ -233,7 +248,7 @@ class ChessPlayer:
         return my_action
 
     def finish_game(self, z):
-
+        #when termination occurs all values of previous moves are updated
         for move in self.moves:  
             move += [z]
 

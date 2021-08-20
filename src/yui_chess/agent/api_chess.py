@@ -34,7 +34,7 @@ class modelInterface:
         return tu
 
     def projectionCluster(self):
-        # Monitors self.pipes and returns any policy or value network outputs
+        # Monitors self.pipes and relays any policy or value network outputs
         global graph
         graph = tf.compat.v1.get_default_graph()
 

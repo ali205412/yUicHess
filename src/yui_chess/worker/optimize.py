@@ -9,7 +9,7 @@ from random import shuffle
 
 import numpy as np
 
-from yui_chess.agent.model_chess import ChessModel
+from yui_chess.agent.model_chess import gameModel
 from yui_chess.config import Config
 from yui_chess.env.chess_env import canon_input_planes, is_black_turn, testeval
 from yui_chess.lib.data_helper import get_game_data_filenames, read_game_data_from_file, get_next_generation_model_dirs
@@ -79,7 +79,7 @@ class OptimizeWorker:
     def compile_model(self):
         
         opt = Adam()
-        losses = ['categorical_crossentropy', 'mean_squared_error'] # avoid overfit for supervised 
+        losses = ['categorical_crossentropy', 'mean_squared_error'] 
         self.model.model.compile(optimizer=opt, loss=losses, loss_weights=self.config.trainer.loss_weights)
 
     def save_current_model(self):
@@ -121,7 +121,7 @@ class OptimizeWorker:
 
     def load_model(self):
         
-        model = ChessModel(self.config)
+        model = gameModel(self.config)
         rc = self.config.resource
 
         dirs = get_next_generation_model_dirs(rc)

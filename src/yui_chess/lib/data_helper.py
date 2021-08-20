@@ -1,4 +1,4 @@
-
+#Organizing and formating data sets used.
 import os
 import json
 from datetime import datetime
@@ -21,6 +21,7 @@ def pretty_print(env, colors):
     new_pgn.write(str(game) + "\n\n")
     new_pgn.close()
     #pyperclip.copy(env.board.fen())
+    #pyperclip caused errors in linux/debian enviorments thus had to be commented out
 
 
 def find_pgn_files(directory, pattern='*.pgn'):

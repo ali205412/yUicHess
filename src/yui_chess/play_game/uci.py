@@ -1,4 +1,4 @@
-
+#Enables the engine to play against humans
 import sys
 from logging import getLogger
 
@@ -67,7 +67,7 @@ def get_player(config):
     from yui_chess.lib.model_helper import load_best_model_weight
     model = ChessModel(config)
     if not load_best_model_weight(model):
-        raise RuntimeError("Best model not found!")
+        raise RuntimeError("most effective model not found")
     return ChessPlayer(config, model.get_pipes(config.play.search_threads))
 
 

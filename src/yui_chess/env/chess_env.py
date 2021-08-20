@@ -1,4 +1,5 @@
-
+#Chess ENV
+#This script was taken from a GitHub Repo, as chess env's are standardized there is no need to recode it.
 import enum
 import chess.pgn
 import numpy as np
