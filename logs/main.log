@@ -972,3 +972,53 @@ Call initializer instance with the dtype argument instead of passing it to the c
 2021-08-21 20:53:22,932@yui_chess.agent.model_chess DEBUG # ate up the saved model 94d0549707aa03942385ae5219013e968b169f2790030ea04fb015785ecb7e24
 2021-08-21 20:53:48,862@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205348.862820\model_config.json
 2021-08-21 20:53:49,165@yui_chess.agent.model_chess DEBUG # ate up the saved model fb5e95f4886fbba5f3048298cf3a628dc904888ebfa5c597f15c4a91395effc5
+2021-08-21 20:54:17,145@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205417.145894\model_config.json
+2021-08-21 20:54:17,370@yui_chess.agent.model_chess DEBUG # ate up the saved model 2e0e700e298310a64654c5a86a8e3e46f87ec89cd5f893935b142cfe452adaa9
+2021-08-21 20:54:48,926@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205448.926305\model_config.json
+2021-08-21 20:54:49,383@yui_chess.agent.model_chess DEBUG # ate up the saved model 0194940b3349827eef0be2a44e60375cc06b461356e670749effcff4171b46b4
+2021-08-21 20:55:24,835@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205524.835406\model_config.json
+2021-08-21 20:55:25,124@yui_chess.agent.model_chess DEBUG # ate up the saved model 9845e90846c9113f514f72f20781d795d771874c3ed091e62bd29eb93609ef25
+2021-08-21 20:56:01,729@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205601.727944\model_config.json
+2021-08-21 20:56:02,012@yui_chess.agent.model_chess DEBUG # ate up the saved model 6cf6bde144afe7f3c4141d9d88ff3d04d680b5933d9a3cb0a86edfa1d3744a05
+2021-08-21 20:56:38,013@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205638.012643\model_config.json
+2021-08-21 20:56:38,329@yui_chess.agent.model_chess DEBUG # ate up the saved model f5e28e0ea6908c83fbbded56eddf0a2a3afa6607391a165efd3ff6cf60b5441e
+2021-08-21 20:57:16,469@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205716.468095\model_config.json
+2021-08-21 20:57:16,707@yui_chess.agent.model_chess DEBUG # ate up the saved model 2474f7e91759cbe6b790b58f7d166a61ce2cbf9fbd71eb75ba754d5838a5d156
+2021-08-21 20:57:56,571@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205756.571534\model_config.json
+2021-08-21 20:57:56,926@yui_chess.agent.model_chess DEBUG # ate up the saved model cd8dea9521a615a8f2eaebf1368340886d6692e0d21e6e44dcd73719daab366b
+2021-08-21 20:58:36,491@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205836.491183\model_config.json
+2021-08-21 20:58:36,673@yui_chess.agent.model_chess DEBUG # ate up the saved model 3b1a9e0edf2e8772213c5786024e6b5c15d6c10069e40df2b099483ec7dff743
+2021-08-21 20:59:18,323@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-205918.323843\model_config.json
+2021-08-21 20:59:18,513@yui_chess.agent.model_chess DEBUG # ate up the saved model 97c397365dd8152b938ff4d97b85b6edc946b330cbbdf50801e06438f4a9bc6a
+2021-08-21 21:00:03,107@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210003.107939\model_config.json
+2021-08-21 21:00:03,332@yui_chess.agent.model_chess DEBUG # ate up the saved model 018560a6ee69ae96ed1808fc0b273d3eaedb4eb8e31494fd1e82f9d90343ee65
+2021-08-21 21:00:48,928@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210048.927740\model_config.json
+2021-08-21 21:00:49,128@yui_chess.agent.model_chess DEBUG # ate up the saved model a857a6fc28746f2f35255bf7049e5b6072f837ac4b22af334d69b7b9061eb82b
+2021-08-21 21:01:36,111@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210136.111705\model_config.json
+2021-08-21 21:01:36,298@yui_chess.agent.model_chess DEBUG # ate up the saved model bd5fe9d52997593cae8838bd84cd9db6498bdd42e50966463d361838e2e71ee6
+2021-08-21 21:02:25,491@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210225.491520\model_config.json
+2021-08-21 21:02:25,684@yui_chess.agent.model_chess DEBUG # ate up the saved model 11a70d64220caea56a2e2478ae0ff43ef121358830dd9bc9f73af1d5b7df445a
+2021-08-21 21:03:17,351@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210317.351380\model_config.json
+2021-08-21 21:03:17,544@yui_chess.agent.model_chess DEBUG # ate up the saved model a9be598a63eab6d5e713c31ed791a2f8b8211983742a5aa31e9fbe6b59be4773
+2021-08-21 21:04:11,362@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210411.362060\model_config.json
+2021-08-21 21:04:11,573@yui_chess.agent.model_chess DEBUG # ate up the saved model 1e7902c1cb6d89c2572a9215f022c3cd468268963ac5a605f6d4948530398431
+2021-08-21 21:05:07,050@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210507.050809\model_config.json
+2021-08-21 21:05:07,279@yui_chess.agent.model_chess DEBUG # ate up the saved model a126f4426b9afba89eccf154f05378d381ba0dc9146778e3f09ad7dc00fbc076
+2021-08-21 21:06:05,458@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210605.458497\model_config.json
+2021-08-21 21:06:05,660@yui_chess.agent.model_chess DEBUG # ate up the saved model cd978ce309a24b2ce3a9d16a990daa7f290c0da350039b71bd2db48a60300276
+2021-08-21 21:07:05,788@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210705.788757\model_config.json
+2021-08-21 21:07:05,974@yui_chess.agent.model_chess DEBUG # ate up the saved model 39edc629a0e98a6beaab2ff7158380076682fc9dfb21d99afaa692a89e6608c9
+2021-08-21 21:08:12,727@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210812.727879\model_config.json
+2021-08-21 21:08:12,980@yui_chess.agent.model_chess DEBUG # ate up the saved model 367c33a9ce9a5aeb17dead0b44b356b0625376fc29fdf349f78016f2b6a37d6a
+2021-08-21 21:09:22,748@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-210922.747774\model_config.json
+2021-08-21 21:09:23,049@yui_chess.agent.model_chess DEBUG # ate up the saved model 94885f515c8c2e7dc0914dd5292bb46ebbfd2874331d0b3d3ff59421d37cdf5f
+2021-08-21 21:10:30,356@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-211030.356509\model_config.json
+2021-08-21 21:10:30,552@yui_chess.agent.model_chess DEBUG # ate up the saved model 35e39ee97941180abf1d3b3b61214bfb7222460e4a49593bc1827dd84715c56a
+2021-08-21 21:11:39,556@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-211139.555386\model_config.json
+2021-08-21 21:11:39,799@yui_chess.agent.model_chess DEBUG # ate up the saved model a4cf16136699169b5f6cf10d02d1541e1f80ce15c92b79c18d07d7390e3a163f
+2021-08-21 21:12:53,783@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-211253.782733\model_config.json
+2021-08-21 21:12:53,990@yui_chess.agent.model_chess DEBUG # ate up the saved model e199651611952e2fb760f80e4ea828e82949215958c27ffbb63732b2cecf9fe5
+2021-08-21 21:14:12,596@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-211412.595205\model_config.json
+2021-08-21 21:14:12,822@yui_chess.agent.model_chess DEBUG # ate up the saved model d9b1c8b92d44e61dfc1e3d98e8d12feb44af2921cc58f9d13eb4fff602d6531d
+2021-08-21 21:15:33,201@yui_chess.agent.model_chess DEBUG # dump model in C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210821-211533.201405\model_config.json
+2021-08-21 21:15:33,481@yui_chess.agent.model_chess DEBUG # ate up the saved model bd794f6457bed32593039fb43dae92e5c6397b060364122e5b3972204e432f84

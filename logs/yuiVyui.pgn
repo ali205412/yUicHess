@@ -1,0 +1,27 @@
+[Event "Computer chess game"]
+[Site "DESKTOP-6AG63AU"]
+[Date "2021.08.21"]
+[Round "?"]
+[White "MyEngine"]
+[Black "MyEngine"]
+[Result "0-1"]
+[BlackElo "2000"]
+[ECO "A29"]
+[Opening "English"]
+[Time "21:47:34"]
+[Variation "Four Knights, 4.g3 d5 5.cxd5 Nxd5 6.Bg2 Nb6 7.O-O Be7 8.a3"]
+[WhiteElo "2000"]
+[TimeControl "300+5"]
+[Termination "normal"]
+[PlyCount "80"]
+[WhiteType "program"]
+[BlackType "program"]
+
+1. c4 e5 2. g3 Nf6 3. Bg2 d5 4. cxd5 Nxd5 5. Nc3 Nb6 6. Nf3 Nc6 7. O-O Be7
+8. a3 O-O 9. d3 Be6 10. b4 a5 11. b5 Nd4 12. Nxe5 Bf6 13. f4 Nb3 14. Rb1
+Qd4+ 15. e3 Qxc3 16. Bb2 Qc5 17. f5 Bd5 18. Bxd5 Qxd5 19. Ng4 Bxb2 20. Rxb2
+a4 21. f6 g6 22. Rf5 Qd6 23. Qf3 Kh8 24. Rh5 gxh5 25. Nh6 Qxd3 26. Qxh5 Qg6
+27. Qxg6 hxg6 28. Rc2 Rac8 29. Nxf7+ Rxf7 30. Rf2 Nc4 31. Rf4 Nxe3 32. Rh4+
+Kg8 33. Rh6 Rxf6 34. h3 Nd4 35. g4 Ne2+ 36. Kh1 Rcf8 37. Rxg6+ Rxg6 38. Kh2
+Rf2+ 39. Kh1 Rd6 40. b6 Rd1# 0-1
+
