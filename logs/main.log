@@ -649,3 +649,151 @@ keep_dims is deprecated, use keepdims instead
 2021-08-21 12:08:16,321@yui_chess.worker.evaluate DEBUG # game  11: ng_score=0.0 as black           win_rate=  0.0% 2b1Q1k1/7p/4pp1B/2P3p1/4P3/1p3N2/PPn1NPPP/5RK1
 2021-08-21 12:08:48,561@yui_chess.worker.evaluate DEBUG # game  12: ng_score=0.0 as white           win_rate=  0.0% r3k2r/pp2bppp/8/4p3/5P1K/P2p1q2/3P3P/1NQ5
 2021-08-21 12:09:14,003@yui_chess.worker.evaluate DEBUG # game  13: ng_score=0.0 as black by resign win_rate=  0.0% 2r5/1N2n1kp/pP2p1p1/8/1n6/2N5/PP2BPPP/R1B2RK1
+2021-08-21 14:46:03,202@yui_chess.manager INFO # config type: options
+2021-08-21 15:14:31,286@yui_chess.manager INFO # config type: options
+2021-08-21 15:14:39,306@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-08-21 15:14:39,641@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-08-21 15:14:39,647@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210542.291242\model_config.json
+2021-08-21 15:14:39,649@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:442: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-08-21 15:14:39,754@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:3543: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+2021-08-21 15:14:39,826@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1188: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:14:39,925@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:112: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2021-08-21 15:14:41,042@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1205: calling reduce_prod_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:14:41,373@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:153: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+2021-08-21 15:14:41,375@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:158: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-08-21 15:14:41,376@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:163: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-08-21 15:14:41,444@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:333: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-08-21 15:14:41,445@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:341: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+2021-08-21 15:14:41,989@yui_chess.agent.model_chess DEBUG # loaded model from le = aa714f9d35e14a4d81b6574d74b22f7af4dcf7431a79a069162fc17b2c657cc9
+2021-08-21 15:14:42,004@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\optimizers.py:711: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+2021-08-21 15:14:42,013@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:2759: The name tf.log is deprecated. Please use tf.math.log instead.
+
+2021-08-21 15:14:42,048@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-145830.449487.json
+2021-08-21 15:14:42,100@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150023.757617.json
+2021-08-21 15:14:42,101@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150504.207765.json
+2021-08-21 15:14:42,107@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-145925.272433.json
+2021-08-21 15:14:42,123@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-145300.370427.json
+2021-08-21 15:15:47,962@yui_chess.manager INFO # config type: options
+2021-08-21 15:15:53,179@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-08-21 15:15:53,435@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-08-21 15:15:53,435@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210542.291242\model_config.json
+2021-08-21 15:15:53,437@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:442: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-08-21 15:15:53,446@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:3543: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+2021-08-21 15:15:53,455@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1188: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:15:53,487@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:112: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2021-08-21 15:15:54,291@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1205: calling reduce_prod_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:15:54,571@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:153: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+2021-08-21 15:15:54,572@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:158: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-08-21 15:15:54,573@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:163: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-08-21 15:15:54,640@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:333: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-08-21 15:15:54,641@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:341: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+2021-08-21 15:15:55,134@yui_chess.agent.model_chess DEBUG # loaded model from le = aa714f9d35e14a4d81b6574d74b22f7af4dcf7431a79a069162fc17b2c657cc9
+2021-08-21 15:15:55,148@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\optimizers.py:711: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+2021-08-21 15:15:55,155@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:2759: The name tf.log is deprecated. Please use tf.math.log instead.
+
+2021-08-21 15:15:55,185@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-145555.705921.json
+2021-08-21 15:15:55,247@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210216-095650.536713.json
+2021-08-21 15:15:55,264@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150915.006712.json
+2021-08-21 15:15:55,270@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210216-103514.352052.json
+2021-08-21 15:15:55,275@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210216-144924.116080.json
+2021-08-21 15:16:26,792@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150628.391897.json
+2021-08-21 15:16:26,794@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150504.207765.json
+2021-08-21 15:20:29,623@yui_chess.manager INFO # config type: options
+2021-08-21 15:20:36,058@yui_chess.manager INFO # config type: options
+2021-08-21 15:20:40,112@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-08-21 15:20:40,402@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-08-21 15:20:40,402@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210542.291242\model_config.json
+2021-08-21 15:20:40,404@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:442: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-08-21 15:20:40,413@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:3543: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+2021-08-21 15:20:40,425@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1188: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:20:40,463@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:112: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2021-08-21 15:20:41,336@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1205: calling reduce_prod_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:20:41,519@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:153: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+2021-08-21 15:20:41,521@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:158: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-08-21 15:20:41,522@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:163: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-08-21 15:20:41,590@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:333: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-08-21 15:20:41,591@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:341: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+2021-08-21 15:20:42,007@yui_chess.agent.model_chess DEBUG # loaded model from le = aa714f9d35e14a4d81b6574d74b22f7af4dcf7431a79a069162fc17b2c657cc9
+2021-08-21 15:20:42,020@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\optimizers.py:711: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+2021-08-21 15:20:42,026@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:2759: The name tf.log is deprecated. Please use tf.math.log instead.
+
+2021-08-21 15:20:42,051@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-145300.370427.json
+2021-08-21 15:20:42,083@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150628.391897.json
+2021-08-21 15:20:42,099@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150023.757617.json
+2021-08-21 15:20:42,106@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150746.164036.json
+2021-08-21 15:20:42,108@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-145555.705921.json
+2021-08-21 15:21:17,790@yui_chess.worker.optimize DEBUG # loading data from C:\Users\ali20\Downloads\yUicHess\data\play_data\play_20210821-150349.561800.json
+2021-08-21 15:23:53,273@yui_chess.manager INFO # config type: options
+2021-08-21 15:23:56,074@tensorflow WARNING # From C:\Users\ali20\Downloads\yUicHess\src\yui_chess\agent\api_chess.py:15: The name tf.keras.backend.set_session is deprecated. Please use tf.compat.v1.keras.backend.set_session instead.
+
+2021-08-21 15:23:56,281@yui_chess.worker.optimize DEBUG # loading newsest model
+2021-08-21 15:23:56,281@yui_chess.agent.model_chess DEBUG # loading model from C:\Users\ali20\Downloads\yUicHess\data\model\next_generation\model_20210725-210542.291242\model_config.json
+2021-08-21 15:23:56,282@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:442: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-08-21 15:23:56,288@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:3543: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+2021-08-21 15:23:56,294@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1188: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:23:56,318@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:112: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2021-08-21 15:23:56,904@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:1205: calling reduce_prod_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2021-08-21 15:23:57,046@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:153: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+2021-08-21 15:23:57,047@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:158: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-08-21 15:23:57,047@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:163: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-08-21 15:23:57,110@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:333: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-08-21 15:23:57,110@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:341: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+2021-08-21 15:23:57,448@yui_chess.agent.model_chess DEBUG # loaded model from le = aa714f9d35e14a4d81b6574d74b22f7af4dcf7431a79a069162fc17b2c657cc9
+2021-08-21 15:23:57,457@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\optimizers.py:711: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+2021-08-21 15:23:57,462@tensorflow WARNING # From C:\Users\ali20\anaconda3\envs\tensorflow\lib\site-packages\keras\backend\tensorflow_backend.py:2759: The name tf.log is deprecated. Please use tf.math.log instead.
+
