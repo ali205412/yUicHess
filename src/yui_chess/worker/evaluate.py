@@ -6,7 +6,7 @@ from logging import getLogger
 from multiprocessing import Manager
 from time import sleep
 
-from yui_chess.agent.model_chess import ChessModel
+from yui_chess.agent.model_chess import gameModel
 from yui_chess.agent.player_chess import ChessPlayer
 from yui_chess.config import Config
 from yui_chess.env.chess_env import ChessEnv, Winner
@@ -92,7 +92,7 @@ class EvaluateWorker:
 
     def load_current_model(self):
 
-        model = ChessModel(self.config)
+        model = gameModel(self.config)
         load_best_model_weight(model)
         return model
 
@@ -109,7 +109,7 @@ class EvaluateWorker:
         model_dir = dirs[-1] if self.config.eval.evaluate_latest_first else dirs[0]
         config_path = os.path.join(model_dir, rc.next_generation_model_config_filename)
         weight_path = os.path.join(model_dir, rc.next_generation_model_weight_filename)
-        model = ChessModel(self.config)
+        model = gameModel(self.config)
         model.load(config_path, weight_path)
         return model, model_dir
 

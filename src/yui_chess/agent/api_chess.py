@@ -50,7 +50,7 @@ class modelInterface:
 
             data = np.asarray(data, dtype=np.float32)
             with graph.as_default():
-                policy_ary, value_ary = self.agent_model.model.projectCluster(data)
+                policy_ary, value_ary = self.computeModel.model.predict_on_batch(data)
             for pipe, p, v in zip(result_pipes, policy_ary, value_ary):
                 pipe.send((p, float(v)))
 
