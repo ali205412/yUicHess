@@ -26,7 +26,7 @@ A Reinforcement Learning Chess Engine ;)
 
 	- I generated self play games for 200 hours,  ran the opt function for all generated play data, and then used the eval function to evaluate models generated in order to find best model. 
 
-	- All was done on a K80 gpu using GCP (Google Cloud Platform).
+	- All training was done on a K80 gpu using GCP (Google Cloud Platform).
 
 	- Any CPU could be used, but I recommend at least a 4 core CPU with a minimum clockspeed of 4 Ghz, and the system memory should at least be 32 GB's to avoid any bottlenecks.
 
