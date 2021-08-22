@@ -1,4 +1,4 @@
-# Acts as a relay attaing the game state and returing the values outputted from
+# Acts as a relay attaining the game state and returning the values outputted from
 # the policy and value networks
 from multiprocessing import connection, Pipe
 from threading import Thread

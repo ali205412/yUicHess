@@ -1,4 +1,4 @@
-# Includes element that realate to direct gameplay, in addition to returning prediction values
+# Includes element that relate to direct gameplay, in addition to returning prediction values
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from logging import getLogger

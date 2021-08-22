@@ -13,15 +13,13 @@ class EvaluateConfig:
         self.evaluate_latest_first = True
         self.max_game_length = 1000
 
-
 class PlayDataConfig:
     def __init__(self):
-        self.min_elo_policy = 500
-        self.max_elo_policy = 1800 
+        self.min_elo_policy = 600
+        self.max_elo_policy = 2000 
         self.sl_nb_game_in_file = 250
         self.nb_game_in_file = 50
         self.max_file_num = 150
-
 
 class PlayConfig:
     def __init__(self):
@@ -40,20 +38,18 @@ class PlayConfig:
         self.min_resign_turn = 5
         self.max_game_length = 1000
 
-
 class TrainerConfig:
     def __init__(self):
         self.min_data_size_to_learn = 0
         self.cleaning_processes = 5 
         self.vram_frac = 1.0
-        self.batch_size = 384 
+        self.batch_size = 500 
         self.epoch_to_checkpoint = 1
         self.dataset_size = 100000
         self.start_total_steps = 0
         self.save_model_steps = 25
         self.load_data_steps = 100
         self.loss_weights = [1.25, 1.0] 
-
 
 class ModelConfig:
     cnn_filter_num = 256
@@ -62,5 +58,4 @@ class ModelConfig:
     res_layer_num = 7
     l2_reg = 1e-4
     value_fc_size = 256
-    distributed = False
     input_depth = 18
