@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source '/home/yui/anaconda3/bin/activate' 
+source '/home/yuik/anaconda3/bin/activate' 
 
 
-source activate chess 
+source activate yuichess 
 
-python /home/yui/Documents/GitHub/yUicHess/src/yui_chess/run.py --cmd uci 
+python /home/yuik/Documents/GitHub/yUicHess/src/yui_chess/run.py --cmd uci 

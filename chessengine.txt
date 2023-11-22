@@ -38,7 +38,6 @@ scipy==1.5.4
 tensorboard==1.15.0
 tensorboard-plugin-wit==1.7.0
 tensorflow-estimator==1.15.1
-tensorflow-gpu==1.15.2
 tensorflow-gpu-estimator==2.3.0
 termcolor==1.1.0
 torch==1.9.0
