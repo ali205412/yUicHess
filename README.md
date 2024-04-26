@@ -30,11 +30,6 @@ A Reinforcement Learning Chess Engine ;)
 
 	- Any CPU could be used, but I recommend at least a 4 core CPU with a minimum clockspeed of 4 Ghz, and system memory should at least be 32 GB's to avoid any bottlenecks.
 
-- [**Resesearch on Background and Related works, and related technologies**](https://docs.google.com/document/d/14dOU6QFc-1rZ_3eqg3ifCOgDc-JjadE_rQyrVHZNdMU/edit?usp=sharing)
-
-- [**Project process log and engine breakdown and analysis**](https://docs.google.com/presentation/d/11OXL5jcayGdL1V-T7D2m4rcXQ_JtFJcp3NWrGJXBp6A/edit?usp=sharing)
-
-- [**Project Gantt Chart**](https://docs.google.com/spreadsheets/d/1DUmkcPceNDXtFXZ1pDVqOrEvx1-5kkgY-qdOPaMNvuQ/edit?usp=sharing)
 
 
 - **Resources used**
